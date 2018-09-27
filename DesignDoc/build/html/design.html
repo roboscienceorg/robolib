@@ -1,0 +1,406 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>6. Design and Implementation &#8212; Senior Design Project Name</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7. System and Unit Testing Design" href="testing.html" />
+    <link rel="prev" title="5. Business Plan" href="businessplan.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="testing.html" title="7. System and Unit Testing Design"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="businessplan.html" title="5. Business Plan"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Senior Design Project Name</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">6. Design and Implementation</a><ul>
+<li><a class="reference internal" href="#systems-goals">6.1. Systems Goals</a></li>
+<li><a class="reference internal" href="#system-overview-and-description">6.2. System Overview and Description</a><ul>
+<li><a class="reference internal" href="#major-system-component-1">6.2.1. Major System Component #1</a></li>
+<li><a class="reference internal" href="#major-system-component-2">6.2.2. Major System Component #2</a></li>
+<li><a class="reference internal" href="#major-system-component-3">6.2.3. Major System Component #3</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#technologies-overview">6.3. Technologies Overview</a></li>
+<li><a class="reference internal" href="#architecture-and-system-design">6.4. Architecture and System Design</a><ul>
+<li><a class="reference internal" href="#design-selection">6.4.1. Design Selection</a></li>
+<li><a class="reference internal" href="#data-structures-and-algorithms">6.4.2. Data Structures and Algorithms</a></li>
+<li><a class="reference internal" href="#data-flow">6.4.3. Data Flow</a></li>
+<li><a class="reference internal" href="#communications">6.4.4. Communications</a></li>
+<li><a class="reference internal" href="#classes">6.4.5. Classes</a></li>
+<li><a class="reference internal" href="#uml">6.4.6. UML</a></li>
+<li><a class="reference internal" href="#ux">6.4.7. UX</a></li>
+<li><a class="reference internal" href="#ui">6.4.8. UI</a></li>
+<li><a class="reference internal" href="#mvvm-etc">6.4.9. MVVM, etc</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#major-component-1">6.5. Major Component #1</a><ul>
+<li><a class="reference internal" href="#technologies-used">6.5.1. Technologies Used</a></li>
+<li><a class="reference internal" href="#component-overview">6.5.2. Component Overview</a></li>
+<li><a class="reference internal" href="#phase-overview">6.5.3. Phase Overview</a></li>
+<li><a class="reference internal" href="#architecture-diagram">6.5.4. Architecture Diagram</a></li>
+<li><a class="reference internal" href="#data-flow-diagram">6.5.5. Data Flow Diagram</a></li>
+<li><a class="reference internal" href="#design-details">6.5.6. Design Details</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#major-component-2">6.6. Major Component #2</a><ul>
+<li><a class="reference internal" href="#id1">6.6.1. Technologies Used</a></li>
+<li><a class="reference internal" href="#id2">6.6.2. Component Overview</a></li>
+<li><a class="reference internal" href="#id3">6.6.3. Phase Overview</a></li>
+<li><a class="reference internal" href="#id4">6.6.4. Architecture Diagram</a></li>
+<li><a class="reference internal" href="#id5">6.6.5. Data Flow Diagram</a></li>
+<li><a class="reference internal" href="#id6">6.6.6. Design Details</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#major-component-3">6.7. Major Component #3</a><ul>
+<li><a class="reference internal" href="#id7">6.7.1. Technologies Used</a></li>
+<li><a class="reference internal" href="#id8">6.7.2. Component Overview</a></li>
+<li><a class="reference internal" href="#id9">6.7.3. Phase Overview</a></li>
+<li><a class="reference internal" href="#id10">6.7.4. Architecture Diagram</a></li>
+<li><a class="reference internal" href="#id11">6.7.5. Data Flow Diagram</a></li>
+<li><a class="reference internal" href="#id12">6.7.6. Design Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="businessplan.html"
+                        title="previous chapter">5. Business Plan</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="testing.html"
+                        title="next chapter">7. System and Unit Testing Design</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/design.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="design-and-implementation">
+<h1>6. Design and Implementation<a class="headerlink" href="#design-and-implementation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="systems-goals">
+<h2>6.1. Systems Goals<a class="headerlink" href="#systems-goals" title="Permalink to this headline">¶</a></h2>
+<p>Briefly describe the overall goals this system plans to achieve. These
+goals are typically provided by the stakeholders. This is not intended
+to be a detailed requirements listing. Keep in mind that this section is
+still part of the Overview.</p>
+</div>
+<div class="section" id="system-overview-and-description">
+<h2>6.2. System Overview and Description<a class="headerlink" href="#system-overview-and-description" title="Permalink to this headline">¶</a></h2>
+<p>Provide a more detailed description of the major system components
+without getting too detailed. This section should contain a high-level
+block and/or flow diagram of the system highlighting the major
+components. See Figure&nbsp;[systemdiagram]. This is a floating figure
+environment. LaTeX&nbsp;will try to put it close to where it was typeset but
+will not allow the figure to be split if moving it can not happen.
+Figures, tables, algorithms and many other floating environments are
+automatically numbered and placed in the appropriate type of table of
+contents. You can move these and the numbers will update correctly.</p>
+<div class="figure" id="id13">
+<a class="reference internal image-reference" href="_images/diagram.png"><img alt="A sample figure .... System Diagram [systemdiagram]" src="_images/diagram.png" style="width: 75.0%;" /></a>
+<p class="caption"><span class="caption-text">A sample figure …. System Diagram [systemdiagram]</span></p>
+</div>
+<div class="section" id="major-system-component-1">
+<h3>6.2.1. Major System Component #1<a class="headerlink" href="#major-system-component-1" title="Permalink to this headline">¶</a></h3>
+<p>Describe briefly the role this major component plays in this system.</p>
+</div>
+<div class="section" id="major-system-component-2">
+<h3>6.2.2. Major System Component #2<a class="headerlink" href="#major-system-component-2" title="Permalink to this headline">¶</a></h3>
+<p>Describe briefly the role this major component plays in this system.</p>
+</div>
+<div class="section" id="major-system-component-3">
+<h3>6.2.3. Major System Component #3<a class="headerlink" href="#major-system-component-3" title="Permalink to this headline">¶</a></h3>
+<p>Describe briefly the role this major component plays in this system.</p>
+</div>
+</div>
+<div class="section" id="technologies-overview">
+<h2>6.3. Technologies Overview<a class="headerlink" href="#technologies-overview" title="Permalink to this headline">¶</a></h2>
+<p>This section should contain a list of specific technologies used to
+develop the system. The list should contain the name of the technology,
+brief description, link to reference material for further understanding,
+and briefly how/where/why it was used in the system. See
+Table&nbsp;[somenumbers]. This is a floating table environment. LaTeX&nbsp;will
+try to put it close to where it was typeset but will not allow the table
+to be split.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>7C0</td>
+<td>hexadecimal</td>
+</tr>
+<tr class="row-even"><td>3700</td>
+<td>octal</td>
+</tr>
+<tr class="row-odd"><td>11111000000</td>
+<td>binary</td>
+</tr>
+<tr class="row-even"><td>1984</td>
+<td>decimal</td>
+</tr>
+</tbody>
+</table>
+<p>Table: A sample Table … some numbers. [somenumbers]</p>
+</div>
+<div class="section" id="architecture-and-system-design">
+<h2>6.4. Architecture and System Design<a class="headerlink" href="#architecture-and-system-design" title="Permalink to this headline">¶</a></h2>
+<p>This is where you will place the overall system design and the
+architecture. This section will be very detailed and should be image
+rich. There is the old phrase <em>a picture is worth a thousand words</em>, in
+this class it could be worth hundreds of points (well if you sum up over
+the entire team). One needs to enter the design and why a particular
+design has been done. THIS IS THE CORE OF THE COURSE.</p>
+<p><em>It is important for you to say why as much as what.</em></p>
+<div class="section" id="design-selection">
+<h3>6.4.1. Design Selection<a class="headerlink" href="#design-selection" title="Permalink to this headline">¶</a></h3>
+<p>Failed designs, design ideas, rejected designs here.</p>
+</div>
+<div class="section" id="data-structures-and-algorithms">
+<h3>6.4.2. Data Structures and Algorithms<a class="headerlink" href="#data-structures-and-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>Describe the special data structures and any special algorithms.</p>
+</div>
+<div class="section" id="data-flow">
+<h3>6.4.3. Data Flow<a class="headerlink" href="#data-flow" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="communications">
+<h3>6.4.4. Communications<a class="headerlink" href="#communications" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="classes">
+<h3>6.4.5. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="uml">
+<h3>6.4.6. UML<a class="headerlink" href="#uml" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ux">
+<h3>6.4.7. UX<a class="headerlink" href="#ux" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ui">
+<h3>6.4.8. UI<a class="headerlink" href="#ui" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="mvvm-etc">
+<h3>6.4.9. MVVM, etc<a class="headerlink" href="#mvvm-etc" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="major-component-1">
+<h2>6.5. Major Component #1<a class="headerlink" href="#major-component-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>If the following makes sense, use this outline, if not then modify the
+outline</strong></p>
+<p>This section is used to describe the design details for each of the
+major components in the system. Note that this chapter is critical for
+all tracks. Research tracks would do experimental design here where
+other tracks would include the engineering design aspects. This section
+is not brief and requires the necessary detail that can be used by the
+reader to truly understand the architecture and implementation details
+without having to dig into the code.</p>
+<div class="section" id="technologies-used">
+<h3>6.5.1. Technologies Used<a class="headerlink" href="#technologies-used" title="Permalink to this headline">¶</a></h3>
+<p>This section provides a list of technologies used for this component.
+The details for the technologies have already been provided in the
+Overview section.</p>
+</div>
+<div class="section" id="component-overview">
+<h3>6.5.2. Component Overview<a class="headerlink" href="#component-overview" title="Permalink to this headline">¶</a></h3>
+<p>This section can take the form of a list of features.</p>
+</div>
+<div class="section" id="phase-overview">
+<h3>6.5.3. Phase Overview<a class="headerlink" href="#phase-overview" title="Permalink to this headline">¶</a></h3>
+<p>This is an extension of the Phase Overview above, but specific to this
+component. It is meant to be basically a brief list with space for
+marking the phase status.</p>
+</div>
+<div class="section" id="architecture-diagram">
+<h3>6.5.4. Architecture Diagram<a class="headerlink" href="#architecture-diagram" title="Permalink to this headline">¶</a></h3>
+<p>It is important to build and maintain an architecture diagram. However,
+it may be that a component is best described visually with a data flow
+diagram.</p>
+</div>
+<div class="section" id="data-flow-diagram">
+<h3>6.5.5. Data Flow Diagram<a class="headerlink" href="#data-flow-diagram" title="Permalink to this headline">¶</a></h3>
+<p>It is important to build and maintain a data flow diagram. However, it
+may be that a component is best described visually with an architecture
+diagram.</p>
+</div>
+<div class="section" id="design-details">
+<h3>6.5.6. Design Details<a class="headerlink" href="#design-details" title="Permalink to this headline">¶</a></h3>
+<p>This is where the details are presented and may contain subsections.
+Here is an example code listing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="c1">#define N 10</span>
+<span class="o">/*</span> <span class="n">Block</span>
+ <span class="o">*</span> <span class="n">comment</span> <span class="o">*/</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">i</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Line</span> <span class="n">comment</span><span class="o">.</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">puts</span><span class="p">(</span><span class="s2">&quot;Python is also great for programmers!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This code listing is not floating or automatically numbered. If you want
+auto-numbering, but it in the algorithm environment (not algorithmic
+however) shown above.</p>
+</div>
+</div>
+<div class="section" id="major-component-2">
+<h2>6.6. Major Component #2<a class="headerlink" href="#major-component-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>6.6.1. Technologies Used<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This section provides a list of technologies used for this component.
+The details for the technologies have already been provided in the
+Overview section.</p>
+</div>
+<div class="section" id="id2">
+<h3>6.6.2. Component Overview<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>This section can take the form of a list of features.</p>
+</div>
+<div class="section" id="id3">
+<h3>6.6.3. Phase Overview<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>This is an extension of the Phase Overview above, but specific to this
+component. It is meant to be basically a brief list with space for
+marking the phase status.</p>
+</div>
+<div class="section" id="id4">
+<h3>6.6.4. Architecture Diagram<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>It is important to build and maintain an architecture diagram. However,
+it may be that a component is best described visually with a data flow
+diagram.</p>
+</div>
+<div class="section" id="id5">
+<h3>6.6.5. Data Flow Diagram<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>It is important to build and maintain a data flow diagram. However, it
+may be that a component is best described visually with an architecture
+diagram.</p>
+</div>
+<div class="section" id="id6">
+<h3>6.6.6. Design Details<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>This is where the details are presented and may contain subsections.</p>
+</div>
+</div>
+<div class="section" id="major-component-3">
+<h2>6.7. Major Component #3<a class="headerlink" href="#major-component-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>6.7.1. Technologies Used<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>This section provides a list of technologies used for this component.
+The details for the technologies have already been provided in the
+Overview section.</p>
+</div>
+<div class="section" id="id8">
+<h3>6.7.2. Component Overview<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>This section can take the form of a list of features.</p>
+</div>
+<div class="section" id="id9">
+<h3>6.7.3. Phase Overview<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>This is an extension of the Phase Overview above, but specific to this
+component. It is meant to be basically a brief list with space for
+marking the phase status.</p>
+</div>
+<div class="section" id="id10">
+<h3>6.7.4. Architecture Diagram<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>It is important to build and maintain an architecture diagram. However,
+it may be that a component is best described visually with a data flow
+diagram.</p>
+</div>
+<div class="section" id="id11">
+<h3>6.7.5. Data Flow Diagram<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>It is important to build and maintain a data flow diagram. However, it
+may be that a component is best described visually with an architecture
+diagram.</p>
+</div>
+<div class="section" id="id12">
+<h3>6.7.6. Design Details<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>This is where the details are presented and may contain subsections.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="testing.html" title="7. System and Unit Testing Design"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="businessplan.html" title="5. Business Plan"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Senior Design Project Name</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Team Name.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+    </div>
+  </body>
+</html>
