@@ -1,5 +1,5 @@
 from math import *
-from numpy import * as np
+import numpy as np
 
 #Arm Lengths
 a1,a2 = 15.0,10.0
