@@ -1,5 +1,5 @@
 from math import *
-from numpy import * as np
+import numpy as np
 
 # Set the link lengths and starting location
 L0 = 8
