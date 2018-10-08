@@ -154,7 +154,7 @@ class DDR():
         return x_vel, y_vel, theta_vel
 
 
-    def calc_new_position( self, ang_vel1, ang_vel2, t ):
+    def FK( self, ang_vel1, ang_vel2, t ):
         """
         This function takes in a list of angular velocities along with the time that
         each velocity occurs. It then computes a list of the positions of the robot and
