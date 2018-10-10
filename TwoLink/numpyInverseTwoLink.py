@@ -1,6 +1,11 @@
 from math import *
 import numpy as np
 
+def TwoLinkInverse():
+
+	def __init__ TwoLinkInverse():
+
+
 # Set the link lengths and starting location
 L0 = 8
 L1 = 5
