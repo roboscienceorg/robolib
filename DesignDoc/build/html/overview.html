@@ -58,7 +58,6 @@
 <li><a class="reference internal" href="#deliverables">1.6. Deliverables</a><ul>
 <li><a class="reference internal" href="#software">1.6.1. Software</a></li>
 <li><a class="reference internal" href="#hardware">1.6.2. Hardware</a></li>
-<li><a class="reference internal" href="#documentation">1.6.3. Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -146,57 +145,56 @@ control panel and a display tool.</p>
 <div class="section" id="client">
 <h2>1.3. Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h2>
 <p>Our client and sponsor is Dr. Jeff McGough, professor at South Dakota
-School of Mines and Technology. He plans to use it as a tool to help students from technical and non-technical backgrounds have a clear
-understanding of the concepts in Robotics.</p>
+School of Mines and Technology. The developed software will supplement the open-source book found at <a class="reference external" href="http://www.roboscience.org">http://www.roboscience.org</a>.</p>
 </div>
 <div class="section" id="project">
 <h2>1.4. Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
-<p>A high level description of the project. Project environment … Project
-boundaries. Project context. Technical Environment. Current systems
-overview.</p>
+<p>This project encompasses an open-source robotics library that will accompany an open-source robotics text book.</p>
+<p>The goal is to provide an accessible and easy-to-use Python library for students of the robotics field. If effectively created, this project would enable students from other technical backgrounds who are not well-versed in the minutia of robotics programming to learn through a higher-level abstraction.</p>
+<p>Since the goal is education, simply developing the software will not satisfy the mission. Tutorials and integration into the open-source textbook are necessary. A thorough documentation and a strong repository of examples will be delivered along with the software.</p>
+<p>The focus of the library will be the content addressed in the robotics textbook found at <a class="reference external" href="http://www.roboscience.org">http://www.roboscience.org</a>. This library will be structured to encourage further development in areas not covered in the textbook.</p>
+<p>Since the goal is a quick-to-grasp library, this project will be developed in Python, one of the two languages used by the Robot Operating System (ROS). The library will include setup files which enable a user with no prior knowledge of Python to install the software necessary to run the examples.</p>
 <div class="section" id="mission-statement">
 <h3>1.4.1. Mission Statement<a class="headerlink" href="#mission-statement" title="Permalink to this headline">¶</a></h3>
-<p>Mission statement for the team inserted here.</p>
+<p>The mission statment of this group is to support the education of Robotics through development focused on ease-of-use for the end-developer.</p>
 </div>
 <div class="section" id="elevator-pitch">
 <h3>1.4.2. Elevator Pitch<a class="headerlink" href="#elevator-pitch" title="Permalink to this headline">¶</a></h3>
-<p>Elevator Pitch for your project inserted here.</p>
+<p>Our product will be a robotics library “for the people.” Since robotics is the culmination of many different disciplines, the designers of robots come from varying degree of computer science ability and knowledge, but software has become an imperative to the modern robotics environment.</p>
+<p>As such, facilities such as the Robot Operating System (ROS) have been developed to enable easy communication between robotics components. Even still, the learning curve for a non-developer to feel comfortable with ROS is steep and can easily require more experienced personnel to debug software problems.</p>
+<p>The purpose, therefore, of this library is to provide the user with a well-supported and documented development environment which works in conjuction with the open-source textbook being developed. The library will be flexible enough to enable development without ROS, but powerful enough to support ROS without needing the end-user to touch the nitty-gritty.</p>
+<p>As a final note, this system will remain an educational tool, and the purpose is to demonstrate key concepts and abilities in the robotics field, not to build a library capable of commercial robotics development.</p>
 </div>
 <div class="section" id="purpose-of-the-system">
 <h3>1.4.3. Purpose of the System<a class="headerlink" href="#purpose-of-the-system" title="Permalink to this headline">¶</a></h3>
-<p>What is the purpose of the system or product?</p>
+<p>As described above, the purpose of this system to provide an easy-to-use educational tool which accompanies the freely available robotics textbook found at <a class="reference external" href="http://www.roboscience.org">http://www.roboscience.org</a>. It will provide a hands-on experience for a student of the book, while allowing development beyond the material covered in the text.</p>
 </div>
 </div>
 <div class="section" id="business-market-need">
 <h2>1.5. Business/Market Need<a class="headerlink" href="#business-market-need" title="Permalink to this headline">¶</a></h2>
-<p>Use this section to define what business need exist and how this
-software will meet and/or exceed that business need. How do you make
-money!! What is the revenue model? What is the market? Who are
-customers?</p>
+<p>Due to the open-source nature of this project, the business/market need are defined non-traditionally.</p>
+<p>As described above, education is the profit that we hope to achieve. By enabling people to move beyond the traditional introductory to robotics tutorials (i.e. Lego Robotics) into a more advanced, yet still nurturing development environment, we hope to expand interest in the robotics field.</p>
 <dl class="docutils">
 <dt>Product Description:</dt>
-<dd>iPhone based app that can detect the high frequency sounds of mice
-and locate them.</dd>
+<dd>Open-Source Python library that allows for robotics algorithm programming with or without ROS integration.</dd>
 <dt>Key Business Goals:</dt>
-<dd><p class="first">Product introduced in the second quarter 2009</p>
+<dd><p class="first">Develop a small community of contributors.</p>
 <ul class="last simple">
-<li>50% gross margin</li>
-<li>15% share of mouse trap market</li>
+<li>Increase pull-requests and forks each semester through 2020.</li>
+<li>Move the maintainence of this library from a group such as the Senior Design Group to a consistent community of experienced robotics students.</li>
 </ul>
 </dd>
 <dt>Primary Market:</dt>
-<dd>Consumers</dd>
+<dd>Students (traditional or otherwise)</dd>
 <dt>Secondary Markets:</dt>
-<dd>Lazy cats</dd>
+<dd>Potentially educators who are looking for resources on robotics education.</dd>
 <dt>Assumptions:</dt>
 <dd><div class="first line-block">
 <div class="line"><br /></div>
 </div>
 <ul class="last simple">
-<li>Available from App store</li>
-<li>Survillence mode</li>
-<li>Low power consumption</li>
-<li>Autodial on detection</li>
+<li>The user of this library has an introductory knowledge of Python 3.</li>
+<li>The user has access to the RoboScience textbook and the RoboLib Design Documentation</li>
 </ul>
 </dd>
 <dt>Stakeholders:</dt>
@@ -204,44 +202,35 @@ and locate them.</dd>
 <div class="line"><br /></div>
 </div>
 <ul class="last simple">
-<li>User</li>
-<li>Retailer</li>
-<li>Sales Force</li>
-<li>Production</li>
-<li>Legal department</li>
+<li>RoboScience.com</li>
+<li>Developers</li>
 </ul>
 </dd>
-<dt>Certifications:</dt>
-<dd>Apple, Cat Fancy Magazine</dd>
 </dl>
 </div>
 <div class="section" id="deliverables">
 <h2>1.6. Deliverables<a class="headerlink" href="#deliverables" title="Permalink to this headline">¶</a></h2>
+<p>The deliverables of this project extend beyond the development of a useable library. To align with the mission statement of both this project and the RoboScience organization, strong documentation and tutorials are required.</p>
 <dl class="docutils">
-<dt>Uploaded to the GitHub repository are:</dt>
+<dt>This project will produce the following:</dt>
 <dd><ul class="first last simple">
-<li>Software Contract</li>
-<li>Documentation</li>
-<li>Code</li>
-<li>Users Manual</li>
+<li>Library Source Code: This will be the actual library. The majority of the library will be structures which the user can import and use within their own Python scripts. The algorithms developed will be all those described on the RoboScience website under “Software”.</li>
+<li>Tutorials: This will be a collection of tutorials which showcase the various objects held in the library and numerous use cases for each object. These will be developed under the supervision of the RoboScience textbook editor to ensure that they are written in a manner consistent with the text.</li>
+<li>Documentation: This will be a thorough description of the library resources. Separate from tutorials, this will be utilized mainly by more experienced programmers who are looking to understand the inner-workings of the library without delving into the source code.</li>
+<li>Setup files: These files will provide a simplistic install process for the user. It will install all necessary packages and provide the user with a list of useful instructions for their development.</li>
 </ul>
 </dd>
 </dl>
 <div class="section" id="software">
 <h3>1.6.1. Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h3>
-<p>These tools will require the use of Ubuntu 16.04 LTS (Xenial Xerus) and
-the Robotics Operating System, the intstallation instructions for which
-are provided in the Robotics book, and Python 3.</p>
+<p>These tools will be built on Ubuntu 16.04 LTS (Xenial Xerus) for the Robotics Operating System 2.0 (ROS2).
+While not all components of the library will require ROS2, all will require Python3 with the SciPy Stack (numpy, scipy, matplotlib, etc.).</p>
+<p>The intstallation instructions for ROS2 are provided in the Robotics book as well as on the ROS2 repository.</p>
 </div>
 <div class="section" id="hardware">
 <h3>1.6.2. Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h3>
 <p>A computer which has at least 4 giga bytes of ram and 2 gigabytes of
 free space.</p>
-</div>
-<div class="section" id="documentation">
-<h3>1.6.3. Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
-<p>And so on. Anything that your contract states that you will deliver to
-the client.</p>
 </div>
 </div>
 </div>
