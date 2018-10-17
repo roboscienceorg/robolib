@@ -131,9 +131,9 @@ system specific.
 Sprint Schedule and Timeline
 ----------------------------
 
-.. image:: Sprints_Fall.png
+.. image:: ./Sprints_Fall.PNG
 
-.. image:: Sprints_Spring.png
+.. image:: ./Sprints_Spring.PNG
 
 Development Environment
 -----------------------
@@ -159,7 +159,7 @@ Source Control
 --------------
 
 The source control used is Git, hosted on Github.com. Git can be installed
-via :bash:`sudo apt-get install git`
+via :code:`sudo apt-get install git`
     
 If a developer would like to contribute, he or she may do so by submitting either
 a bug report or a pull request at the repository site https://github.com/roboscienceorg/robolib.
