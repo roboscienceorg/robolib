@@ -203,30 +203,27 @@ class DDR():
 
     def IK(self, x_vel, y_vel, x_accel, y_accel):
         """
-        This function takes in a list of x and y velocities as well as their accelerations
-        to compute the angular velocities of the wheels required to traverse this path.
-
-        It returns these velocities as two lists (combined into a tuple).
+        This function takes in a list of angular velocities along with the time that
+        each velocity occurs. It then computes a list of the positions of the robot and
+        returns this list.
 
         NOTE: This equation will only return correct results if the wheels are the same
         size.
 
         Parameters
         ----------
-        x_vel:      list(Numeric) length n
-            This is the list of x velocities at each timestep
-        y_vel:      list(Numeric) length n
-            This is the list of y velocities at each timestep
-        x_accel:    list(Numeric) length n
-            This is the list of x acceleration at each timestep
-        y_accel:    list(Numeric) length n
-            This is the list of y acceleration at each timestep
+        ang_vel1:       list(Numeric) length n
+            This is the list of angular velocities of the right wheel.
+        ang_vel2:       list(Numeric) length n
+            This is the list of angular velocities of the left wheel.
+        t:              list(Numeric) length n
+            This is the list of times of the provided angular velocities.
 
         Returns
         -------
-        tuple:       tulple( list(Numeric) length n, list(Numeric) length n)
-            This tuple contains two elements. The first is a list of the left wheel velocity
-            at each timestep and the second is the list of right wheel velocity.
+        pos_list:       list( list(Numeric) length 3) length n
+            This is the list of positions computed from the provided parameters. This
+            list is a list of lists of length 3 structures as [x, y, theta].
 
         """
 
@@ -234,6 +231,7 @@ class DDR():
         k = x_vel * y_accel - y_vel * x_accel / np.power(v, 3)
         phi_1 = (self._L / self._rad_r) * ((x_vel * y_accel - y_vel * x_accel) / (np.power(x_vel, 2) + np.power(y_vel, 2))) + v / self._rad_r
         phi_2 = -(self._L / self._rad_r) * ((x_vel * y_accel - y_vel * x_accel) / (np.power(x_vel, 2) + np.power(y_vel, 2))) + v / self._rad_r
+#        phi_2 = (v / self._rad_r) * (-k * self._L + 1)
 
         return (phi_1, phi_2)
 
