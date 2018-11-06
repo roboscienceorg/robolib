@@ -5,7 +5,7 @@ from std_msgs.msg import String
 class PublisherExample(Node):
     '''
     This class is an example of a basic publisher in ROS2. It simply establishes
-    a publisher on the provided topic and publishes "Hello!" at 1 Hz.
+    a publisher on the provided topic and publishes whatever the user supplies
     '''
 
     def __init__(self, node_name="PublisherNode", topic_name="topic"):
@@ -38,5 +38,5 @@ class PublisherExample(Node):
         identified in the object's initialization function.
         '''
         msg = String()
-        msg.data = "Hello!"
+        msg.data = input("Enter message to be sent from publisher: ")
         self.pub.publish(msg)

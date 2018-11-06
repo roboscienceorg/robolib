@@ -37,5 +37,4 @@ class Subscriber2Example(Node):
         This function simply prints the message heard on the topic identified in the
         object's initialization function.
         '''
-
-        print("In subscriber", self.node_name, ": read", msg.data, "from topic", self.topic_name)
+        self.get_logger().info('This is what I heard: "%s"' % msg.data)

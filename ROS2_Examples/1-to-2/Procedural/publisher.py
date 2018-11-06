@@ -9,7 +9,7 @@ publisher = pnode.create_publisher(String, 'topic')
 
 
 while(True): 
-    msg = String(data="Hello!")
+    msg = String(data="Hello, World!")
     publisher.publish(msg)
-    print('Publishing the message "Hello!"')
+    print('Publishing the message "Hello, World!"')
     time.sleep(1)
