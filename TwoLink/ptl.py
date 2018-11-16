@@ -18,7 +18,7 @@ class PTL():
 
         Parameters
         ----------
-       top_bar:  Numeric
+        top_bar:  Numeric
             This is the base bar the two first links are attached to. X and Y coordinates
             are based upon the middle of this bar being the (0,0) coordinate.
         link_1:  Numeric
@@ -31,52 +31,54 @@ class PTL():
         '''
         self._top_bar = top_bar
         self._link_1 = link_1
-        self._link_1 = link_2
+        self._link_2 = link_2
         self._x = starting_pos[0]
         self._y = starting_pos[1]
+
+        if (self._link_1 <= 0 and self._link_2 <= 0):
+            raise PTL_Error("At least one arm links must be greater than 0")
 
 
     @property
     def top_bar(self):
-        """
+        '''
         T 
-        """
+        '''
         return self._top_bar
 
-    @L.setter
+    @top_bar.setter
     def top_bar(self, value):
         self._top_bar = value
 
     @property
     def link_1(self):
-        """
-        T
-        """
+        '''
+        T 
+        '''
 
         return self.link_1
 
-    @rad_r.setter
-    def rad_r(self, value):
+    @link_1.setter
+    def link_1(self, value):
         self._link_1 = value
 
     @property
     def link_2(self):
-        """
-        T
-        """
-        if (link_1 <= 0 && link_2 <= 0):
-            raise PTL_Error("At least one arm links must be greater than 0")
+        '''
+        T 
+        '''
+        
         return self.link_2
 
-    @rad_l.setter
+    @link_2.setter
     def link_2(self, value):
         self._link_2 = value
 
     @property
     def position(self):
-        """
+        '''
         T 
-        """
+        '''
 
         return [self._x, self._y]
 
@@ -87,9 +89,9 @@ class PTL():
 
     @property
     def x(self):
-        """
+        '''
         T 
-        """
+        '''
 
         return self._x
 
@@ -99,9 +101,9 @@ class PTL():
 
     @property
     def y(self):
-        """
+        '''
         T 
-        """
+        '''
 
         return self._y
 
@@ -111,7 +113,7 @@ class PTL():
 
 
     def FK( self, theta_1,  theta_2 ):
-        """
+        '''
         This function takes to given angles, theta_1 and theta_2 and returns the position
         of the end effector.
 
@@ -127,28 +129,29 @@ class PTL():
         pos_list:       list( list(Numeric) length 2) length n
             This is the position that the end effector is located.
             The list is structured as [x, y].
-        """
+        '''
+        pos_list = []
 
-         a = -link_1 * np.cos(theta_1) - top_bar/2
-         b = link_1* np.sin(theta_1)
-         c = link_1 * np.cos(theta_2) + top_bar/2
-         d = link_1 *sin(theat_2)
+        a = -self._link_1 * np.cos(theta_1) - self._top_bar/2
+        b = self._link_1* np.sin(theta_1)
+        c = self._link_1 * np.cos(theta_2) + self._top_bar/2
+        d = self._link_1 *sin(theat_2)
 
-         u = np.sqrt(((a-c)*(a-c))+((b-d)*(b-d)))
-         v = (link_2* link_2) - (u*u)/4
+        u = np.sqrt(((a-c)*(a-c))+((b-d)*(b-d)))
+        v = (self._link_2* self._link_2) - (u*u)/4
 
-         self._x = ((a+c)/2) + ((v * (b - d))/u)
-         self._y = ((b+d)/2) + ((v * (c - a))/u)
+        self._x = ((a+c)/2) + ((v * (b - d))/u)
+        self._y = ((b+d)/2) + ((v * (c - a))/u)
 
-         pos_list.append([self._x, self._y])
+        pos_list.append([self._x, self._y])
 
-         return pos_list
+        return pos_list
 
 
 
             
     def IK( self, xlist,  ylist ):
-        """
+        '''
         This function takes in an x and y position and uses the given bar size to give an
         accurate angle value between theta_1, the angle on the left manipulators, and theta_2,
         the angle on the right maniulators.
@@ -166,25 +169,25 @@ class PTL():
             This is the list of angles between link_1 and link_2. It is used to calculate the
             angles bettween the links if only the size of the links are given. The list is 
             structured as [ theta_1, theta_2]
-        """
+        '''
+        ang_list=[]
+
+        G = np.sqrt((xlist-self._top_bar/2.0)*(xlist-self._top_bar/2.0)+ylist*ylist)
+        H = np.sqrt((xlist+self._top_bar/2.0)*(xlist+self._top_bar/2.0)+ylist*ylist)
+
+        alpha = np.arccos((G*G + self._top_bar*self._top_bar - H*H)/(2.0*G*self._top_bar))
+        beta = np.arccos((H*H + self._top_bar*self._top_bar - G*G)/(2.0*H*self._top_bar))
+        gamma = np.arccos((G*G + self._link_1*self._link_1 - self._link_2*self._link_2)/(2.0*G*self._link_1))
+        eta = np.arccos((H*H + self._link_1*self._link_1 - self._link_2*self._link_2)/(2.0*H*self._link_1))
+
+        self._theta_1 = np.pi - beta - eta
+        self._theta_2 = np.pi - alpha - gamma
+
+        ang_list.append([self._theta_1, self._theta_2])
+
+        return (ang_list)
 
 
-          G = np.sqrt((xlist-top_bar/2.0)*(xlist-top_bar/2.0)+ylist*ylist)
-          H = np.sqrt((xlist+top_bar/2.0)*(xlist+top_bar/2.0)+ylist*ylist)
-
-          alpha = np.arccos((G*G + top_bar*top_bar - H*H)/(2.0*G*top_bar))
-          beta = np.arccos((H*H + top_bar*top_bar - G*G)/(2.0*H*top_bar))
-          gamma = np.arccos((G*G + link_1*link_1 - link_2*link_2)/(2.0*G*link_1))
-          eta = np.arccos((H*H + link_1*link_1 - link_2*link_2)/(2.0*H*link_1))
-
-          self._theta_1 = pi - beta - eta
-          self._theta_2 = pi - alpha - gamma
-
-          ang_list.append([self._theta_1, self._theta_2])
-
-          return ang_list
 
 
-
-
-         '''Add maping funciton?'''
+        '''Add maping funciton?'''
