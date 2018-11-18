@@ -106,6 +106,15 @@ class Map():
         """
         return self._map
 
+    @property
+    def map(self, new_map):
+        """
+        This is a setter for the internal map object. This allows the user
+        to manually edit a copy of the map and set it back in the object.
+        """
+        
+        self._map = new_map
+
     def setup(self):
         # Get figure objects and adjust for buttons
         self._fig = plt.figure()
