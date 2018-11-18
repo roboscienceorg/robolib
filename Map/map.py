@@ -38,8 +38,7 @@ class Map():
         self._objects = []
 
         # Get figure objects and adjust for buttons
-        self._fig, self._ax = plt.subplots()
-        plt.subplots_adjust(bottom=0.2)
+        self.setup()
 
         # Build map of points
         points_x = np.tile(np.linspace(0, self._w, self._pps), self._pps)
@@ -51,29 +50,18 @@ class Map():
         #self._pts.set_facecolors([0, 0, 0, 0])
         self._pts.remove()
 
-        self._poly_select = PolygonSelector(self._ax, self.on_poly_select)
-
         self._map = np.zeros( (self._pps - 1, self._pps - 1) )
-
-        # Build buttons
-        button_location = plt.axes([0.8, 0.05, 0.15, 0.075])
-        self._add_object_button = Button(button_location, 'Add Object')
-        self._add_object_button.on_clicked(self.click_add_object)
-
-        button_location = plt.axes([0.6, 0.05, 0.18, 0.075])
-        self._clear_axes_button = Button(button_location, "Clear Objects")
-        self._clear_axes_button.on_clicked(self.click_clear)
-
-        button_location = plt.axes([0.4, 0.05, 0.15, 0.075])
-        self._finished_button = Button(button_location, 'Finished')
-        self._finished_button.on_clicked(self.click_finished)
-
-
-        self._poly_select.set_active(False)
 
 
     def edit(self):
-        plt.show(self._fig)
+        try:
+            plt.close(self._fig)
+        except:
+            print("Exception")
+            pass
+
+        self.setup()
+        self._fig.show()
 
     def click_add_object(self, event):
         """
@@ -89,12 +77,13 @@ class Map():
             item.remove()
 
         self._objects.clear()
+        self._map = np.zeros( (self._pps - 1, self._pps - 1) )
 
     def click_finished(self, event):
         """
         Callback for the 'Finished' button
         """
-        plt.close()
+        plt.close(self._fig)
 
     @property
     def height(self):
@@ -116,6 +105,39 @@ class Map():
         The map defined by the object. -1 indicates an obstacle.
         """
         return self._map
+
+    def setup(self):
+        # Get figure objects and adjust for buttons
+        self._fig = plt.figure()
+        self._ax = self._fig.add_subplot(1, 1, 1)
+        self._ax.set_title("Map Editor")
+        self._fig.canvas.set_window_title('RoboLib')
+        self._ax.set_xlim( [0, self._w] )
+        self._ax.set_ylim( [0, self._h] )
+        plt.subplots_adjust(bottom=0.2)
+
+        # Build buttons
+        button_location = plt.axes([0.8, 0.05, 0.15, 0.075])
+        self._add_object_button = Button(button_location, 'Add Object')
+        self._add_object_button.on_clicked(self.click_add_object)
+
+        button_location = plt.axes([0.6, 0.05, 0.18, 0.075])
+        self._clear_axes_button = Button(button_location, "Clear Objects")
+        self._clear_axes_button.on_clicked(self.click_clear)
+
+        button_location = plt.axes([0.4, 0.05, 0.15, 0.075])
+        self._finished_button = Button(button_location, 'Finished')
+        self._finished_button.on_clicked(self.click_finished)
+
+        # Clear from previous axis
+        for patch in self._objects:
+            patch.remove()
+
+        for patch in self._objects:
+            self._ax.add_patch(patch)
+
+        self._poly_select = PolygonSelector(self._ax, self.on_poly_select)
+        self._poly_select.set_active(False)
 
     def on_poly_select(self, verts):
         """
