@@ -106,6 +106,15 @@ class Map():
         """
         return self._map
 
+    @map.setter
+    def map(self, new_map):
+        """
+        This function sets the value passed as the map for the object
+        """
+
+        self._map = new_map
+
+
     def setup(self):
         # Get figure objects and adjust for buttons
         self._fig = plt.figure()
