@@ -109,11 +109,12 @@ class Map():
     @map.setter
     def map(self, new_map):
         """
-        This function sets the value passed as the map for the object
+        This is a setter for the internal map object. This allows the user
+        to manually edit a copy of the map and set it back in the object.
+
         """
 
         self._map = new_map
-
 
     def setup(self):
         # Get figure objects and adjust for buttons
