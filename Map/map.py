@@ -61,7 +61,8 @@ class Map():
             pass
 
         self.setup()
-        self._fig.show()
+        plt.figure(self._fig.number)
+        plt.show(block=True)
 
     def click_add_object(self, event):
         """
@@ -105,6 +106,14 @@ class Map():
         The map defined by the object. -1 indicates an obstacle.
         """
         return self._map
+
+    @property
+    def pps(self):
+        """
+        The number of points per side in the map. NOTE: The map property will be
+        one point smaller in both directions as it is the gaps between the points.
+        """
+        return self._pps
 
     @map.setter
     def map(self, new_map):
