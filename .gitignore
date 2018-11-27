@@ -1,1 +1,6 @@
 ./DesignDoc/build
+__pycache__/
+*.pc
+*.pyc
+*.pyo
+
