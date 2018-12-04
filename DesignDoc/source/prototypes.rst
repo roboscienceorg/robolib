@@ -92,12 +92,6 @@ We had a person who was well versed in public speaking, one who was versed in tr
 between different languages, and one who was prepared to have the semester organized for
 the rest of the group.
 
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
-Place your burndown charts, team velocity information, etc here if they
-are not discussed above.
-
 
 Sprint 2 Report
 ---------------
@@ -155,6 +149,9 @@ Deliverable
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
+Direct results of Sprint 2 were the development of the Differential Drive 
+Robot Kinematics, Parallel Two Link Manipulator Kinematics, and Two Link 
+Manipulator Kinematics.
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -178,12 +175,6 @@ Sprint Retrospective
 In review, this sprint seemed to be a little short on what we should have attempted to
 complete. However, it also gave us a good idea of how much work each individual module
 would require for the rest of the project.
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
-Place your burndown charts, team velocity information, etc here if they
-are not discussed above.
 
 
 Sprint 3 Report
@@ -236,6 +227,14 @@ Deliverable
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
+Results of Sprint 3 were the creation of several example modules that could be used as
+teaching examples.
+
+.. figure:: ./sprint3_test.png
+   :alt: Sprint 3 Test Result .... Sprint 3 Result [sprint3result]
+   :width: 75.0%
+
+   Sprint 3 Test Result .... Sprint 3 Result [sprint3result]
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -273,12 +272,6 @@ Sprint Retrospective
 While this sprint was the first one we did not complete a module, it was still a good sprint in 
 retrospect. This is mostly because it gave us a large chuck of code that was usable with future
 modules that could be used together.
-
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
-Place your burndown charts, team velocity information, etc here if they
-are not discussed above.
 
 
 Sprint 4 Report
@@ -327,7 +320,8 @@ Deliverable
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
-
+Results of Sprint 4 were the creation of several example modules that could be used as
+teaching examples.
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -359,17 +353,15 @@ As soon as we had a Map object that was designed, we started on a different sche
 for what we needed to be completed to have a good base by the end of the next couple
 sprints.
 
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
-Place your burndown charts, team velocity information, etc here if they
-are not discussed above.
 
 Sprint 5 Report
 ---------------
 November 16th - November 29th
 
-
+This sprint places emphasis on developing modules to assist in the learning side
+of this project. As well as finishing up modules that had not been completed during
+several other sprints. Emphasis is put on modules that would be required for future
+develomental modules.
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
@@ -391,42 +383,67 @@ Sprint Backlog
 Deliverable
 ~~~~~~~~~~~
  - Map Object
- - Bugs 1, 2, 3 and Tangent Bug
+ - Bugs 1, 2, 3
+ - Tangent Bug
  - Maze escape
  - Wave front algorithm
  - Brushfire algorithm
+ - Unit Tests
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
+Results of Sprint 5 were the creation of the Mapping Object as a replacement for ROS2 and
+Veranda. This created a test figure that could be used in conjunction with the planning 
+algorithms and submodules, such as the wavefront algorithm.
+
+.. figure:: ./sprint5_test.png
+   :alt: Sprint 5 Test Result .... Sprint 5 Result [sprint5result]
+   :width: 75.0%
+
+   Sprint 5 Test Result .... Sprint 5 Result [sprint5result]
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
- - Bugs 1, 2, 3 and Tangent Bug
- - Maze escape
- - Brushfire algorithm
+This sprint, contained a number of failures in the modules that we attempted to complete.
+Many of the example programs that we were looking at completing were left incomplete and
+partially done. This leaves a large hole in the eduational side of the project which
+we were looking to fill.
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+No modifications to future Sprints, Design, or Architecture were required this sprint.
 
 Sprint Review
 ~~~~~~~~~~~~~
+This sprint of a bit of a large failure on our parts as completion of most of the modules
+were not completed. We had a large push on Unit Tests that were added, as well as more
+rigorous testing to existing modules, which felt like an accomplishment. However, it
+will lead as an example for how not to run sprints for future work.
 
 Sprint Retrospective
 ~~~~~~~~~~~~~~~~~~~~
+This sprint was an example of a lack of leadership in part, and direction, as we failed to
+complete most of the modules that we were looking to finish for review, and education.
+While this may also point to taking on to many modules to develop at a time, and underestimating
+the time required, we also needed to review the amount of time we put into individual modules in
+future sprints.
 
-Sprint Analytics
-~~~~~~~~~~~~~~~~
-
-Place your burndown charts, team velocity information, etc here if they
-are not discussed above.
 
 Sprint 6 Report
 ---------------
 November 30th - Current
 
-Include your report here.  You may have sent the report to your client,
-it should be duplicated here.   There is not a separate report submission
-for the class.
+This sprint is a bit of a develomental backlog. With the changes that happened during
+the last two sprints, we are looking at finishing the basic modules for our new Map
+Object. This as well as some of the basic bugs would be a good start to examples
+that can be used as teaching tools.
+
+This sprint may look at being slightly longer than the rest as it does extend into the
+Christmas holiday. This will give us a little bit more time to develop some more Unit
+Testing using Nosetests.
+
+With the multiple iterations of design that we have developed to the project, finishing
+these modules is a much larger priority than completing new modules.
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
@@ -443,7 +460,8 @@ Sprint Backlog
 Deliverable
 ~~~~~~~~~~~
  - FK and IK Steered
- - Bugs 1, 2, 3 and Tangent Bug
+ - Bugs 1, 2, 3
+ - Tangent Bug
  - Maze escape
  - Brushfire algorithm
  - Simulation of sensors (IMUs, encoders)
@@ -468,6 +486,3 @@ Sprint Analytics
 
 Place your burndown charts, team velocity information, etc here if they
 are not discussed above.
-
-
-
