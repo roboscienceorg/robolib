@@ -39,7 +39,10 @@ Client
 ------
 
 Our client and sponsor is Dr. Jeff McGough, professor at South Dakota 
-School of Mines and Technology. The developed software will supplement the open-source book found at http://www.roboscience.org.
+School of Mines and Technology. He has founded the RoboScience organization
+with the goal of fostering an open source robotics community focused on
+education. The developed software will supplement the open-source book found
+at http://www.roboscience.org and contribute to the purpose of RoboScience.
 
 Project
 -------
@@ -112,6 +115,8 @@ Stakeholders:
 
     -  Developers
 
+    -  Future Students
+
 
 Deliverables
 ------------
@@ -119,13 +124,13 @@ Deliverables
 The deliverables of this project extend beyond the development of a useable library. To align with the mission statement of both this project and the RoboScience organization, strong documentation and tutorials are required.
 
 This project will produce the following:
-    - Library Source Code: This will be the actual library. The majority of the library will be structures which the user can import and use within their own Python scripts. The algorithms developed will be all those described on the RoboScience website under "Software".
+    - Library Source Code: This will be the actual library. The majority of the library will be structures which the user can import and use within their own Python scripts. The algorithms developed will be described in more details in the Deliverables section of this report. 
 
-    - Tutorials: This will be a collection of tutorials which showcase the various objects held in the library and numerous use cases for each object. These will be developed under the supervision of the RoboScience textbook editor to ensure that they are written in a manner consistent with the text.
+    - Tutorials: This will be a collection of tutorials which showcase the various objects held in the library and numerous use cases for each object. These will be developed under the supervision of the RoboScience textbook editor to ensure that they are written in a manner consistent with the text. The purpose of these tutorials is to address the educational component of this library. The tutorials will reference the text to explain the computations which the provided objects undergo.
 
-    - Documentation: This will be a thorough description of the library resources. Separate from tutorials, this will be utilized mainly by more experienced programmers who are looking to understand the inner-workings of the library without delving into the source code.
+    - Documentation: This will be a thorough description of the library resources. Separate from tutorials, this will be utilized mainly by more experienced programmers who are looking to understand the inner-workings of the library without delving into the source code. This includes an API reference manual and the documentation you are currently reading.
 
-    - Setup files: These files will provide a simplistic install process for the user. It will install all necessary packages and provide the user with a list of useful instructions for their development.
+    - Setup files: These files will provide a simplistic install process for the user. It will install all necessary packages and provide the user with a list of useful instructions for their development. Specifically, this setup file will install the dependencies listed in "requirements.txt" found in the project repository via pip. It will also setup a virtual python environment which the user can use for further development.
 
 
 Software
