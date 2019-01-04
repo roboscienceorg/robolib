@@ -2,6 +2,9 @@ import ddr
 import numpy as np
 import matplotlib.pyplot as plt
 
+def test_DDR_instantiation():
+    bot = ddr.DDR(1, 1, 1)
+    assert bot != None
 
 def test_DDR_xaxis_line_IK_and_back():
     bot = ddr.DDR(1, 1, 5)
