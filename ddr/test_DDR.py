@@ -1,4 +1,4 @@
-import ddr
+import robolib.ddr
 import numpy as np
 import matplotlib.pyplot as plt
 
