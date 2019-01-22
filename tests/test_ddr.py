@@ -1,4 +1,4 @@
-import ddr
+from context import ddr
 import numpy as np
 import matplotlib.pyplot as plt
 
