@@ -9,250 +9,217 @@
 Design and Implementation
 =========================
 
+The Robotics library will be developed has several different areas or 
+components.
+
+
 Systems Goals
 -------------
 
-Briefly describe the overall goals this system plans to achieve. These
-goals are typically provided by the stakeholders. This is not intended
-to be a detailed requirements listing. Keep in mind that this section is
-still part of the Overview.
+As discussed with the stakeholders, the Senior Design team will be delivering 
+library code in python containing all of the algorithms from the Robotics book 
+written by Dr. McGough, a professor at South Dakota School of Mines and 
+Technology. Thourough documentation and tutorials for every module and setup 
+files will be provided so that users with very little to no experience spend no 
+time in setting up their environment and getting started with learning the 
+concepts.
 
 System Overview and Description
 -------------------------------
 
-Provide a more detailed description of the major system components
-without getting too detailed. This section should contain a high-level
-block and/or flow diagram of the system highlighting the major
-components. See Figure [systemdiagram]. This is a floating figure
-environment. LaTeX will try to put it close to where it was typeset but
-will not allow the figure to be split if moving it can not happen.
-Figures, tables, algorithms and many other floating environments are
-automatically numbered and placed in the appropriate type of table of
-contents. You can move these and the numbers will update correctly.
-
-.. figure:: ./diagram.png
-   :alt: A sample figure .... System Diagram [systemdiagram]
-   :width: 75.0%
-
-   A sample figure .... System Diagram [systemdiagram]
+There are 3 major components to this project, and they are library modules, 
+documentation, tutorials and setup files, and map object. All these are 
+independent, but make no sense without one another. Setup files help run the library modules and these modules will make no sense to an inexperienced user 
+without the documentation and tutorials. The map object removes all dependency 
+from Veranda and helps plot the path taken by a robot when it is given various algorithms. 
 
 Major System Component #1
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Describe briefly the role this major component plays in this system.
+Library Source Code: This contains all the call routines in Python which the 
+user will be able to use to learn Robotics concepts. The algorithms developed 
+will be all those described on the RoboScience website under "Software".
+
 
 Major System Component #2
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Describe briefly the role this major component plays in this system.
+Examples: This will contain tutorials, heavily documented code and setup files 
+which will help the user understand how the modules are used and how they interact with each other and they can also setup thier execution environment. 
 
 Major System Component #3
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Describe briefly the role this major component plays in this system.
+Map Object: This is a very useful data structure which allows to the user to 
+visualize the path taken by the robot using matplotlib. 
 
 Technologies Overview
 ---------------------
 
-This section should contain a list of specific technologies used to
-develop the system. The list should contain the name of the technology,
-brief description, link to reference material for further understanding,
-and briefly how/where/why it was used in the system. See
-Table [somenumbers]. This is a floating table environment. LaTeX will
-try to put it close to where it was typeset but will not allow the table
-to be split.
+Ubuntu 16.04 LTS (Xenial Xerus) operating system was used to develop as well as 
+Robotics Operating System 2. Initially Veranda was used as a simualtion 
+software, but we decided to move away from it as it was actively being 
+developed and the students who were using it kept finding bugs. Besides these, 
+various libraries from Python like the SciPy stack and matplotlib were used. 
 
-+---------------+---------------+
-| 7C0           | hexadecimal   |
-+---------------+---------------+
-| 3700          | octal         |
-+---------------+---------------+
-| 11111000000   | binary        |
-+---------------+---------------+
-| 1984          | decimal       |
-+---------------+---------------+
+Development was done using Python and an Object-Oriented approach was taken. 
+Python is popular and widely used and has a clean syntax, which means that the 
+code is easy to read and write. GitHub was used for version control. 
 
-Table: A sample Table ... some numbers. [somenumbers]
 
 Architecture and System Design
 ------------------------------
 
-This is where you will place the overall system design and the
-architecture. This section will be very detailed and should be image
-rich. There is the old phrase *a picture is worth a thousand words*, in
-this class it could be worth hundreds of points (well if you sum up over
-the entire team). One needs to enter the design and why a particular
-design has been done. THIS IS THE CORE OF THE COURSE.
+There are 7 classes right now and they are:
 
-*It is important for you to say why as much as what.*
+- MECANUM - Class to help visualize a mecanum robot.
+- PTL - 
+- DDR - Differential Drive Robot
+- Map - Helps use the map object
+- PublisherExample - Helps use publisher along with subscriber to see 
+                     communication using ROS2
+- SubscriberExample - Helps use subscriber along with publisher to see 
+                      communication using ROS2
+- ValToPWM - Helps output a pulse width modulation graph based on a value. 
+
+The publisher and subscriber classes are built to interact with each other. 
+The MECANUM, PTL, DDR are independent and the user can initialize their objects 
+in a python script and run them. The Map object can be used to visualize 
+motion planning algorithms like Bug 1 and Bug 2. Code for them has not been 
+written yet.
 
 Design Selection
 ~~~~~~~~~~~~~~~~
 
-Failed designs, design ideas, rejected designs here.
+We initially developed and displayed the robots movements using Veranda and ROS 
+2, but since both these things were actively being developed, they still had 
+bugs. Therefore, we decided to move away from it and made our own map object, 
+so that we did not have to depend on external libraries which may fail at 
+times. 
+
+Each algorithm was written on a different branch and was heavily tested. Only 
+after code reviews were they merged into the master branch. 
 
 Data Structures and Algorithms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Describe the special data structures and any special algorithms.
-
-Data Flow
-~~~~~~~~~
+The only special data structure we used was the Map Object, which allows a user 
+to create a robot, some obstacles and a goal, and it displays all this and the 
+path taken by a robot on a graph using matplotlib. Python builtin data 
+structures like list, map and arrays were also used.
 
 Communications
 ~~~~~~~~~~~~~~
 
+The team met twice a week every week in person, once on Tueday with the sponsor 
+to update him on our progress, and once on Friday to make objectives and review 
+code. Besides that, the team used Discord, a popular online messaging 
+application, to decide on meeting times and discuss issues if they could not 
+meet. A git runner was set up on discord so that the team got a notification 
+every time someone pushed something to the RoboScience repo. 
+
 Classes
 ~~~~~~~
 
-UML
-~~~
+Each library has its own class.
 
-UX
-~~
-
-UI
-~~
-
-MVVM, etc
-~~~~~~~~~
+The following classes are primarily used or dependent.
+- MECANUM
+- PTL
+- DDR
+- Map
+- PublisherExample
+- SubscriberExample
+- ValToPWM
+ 
 
 Major Component #1
 -------------------
 
-**If the following makes sense, use this outline, if not then modify the
-outline**
-
-This section is used to describe the design details for each of the
-major components in the system. Note that this chapter is critical for
-all tracks. Research tracks would do experimental design here where
-other tracks would include the engineering design aspects. This section
-is not brief and requires the necessary detail that can be used by the
-reader to truly understand the architecture and implementation details
-without having to dig into the code.
-
-
+Since the goal of this project is education, this is probably the most important component in the application. All the source code is present here 
+and the user can call it by including the library in their scripts and using 
+the various functions inside the classes. The modules can also be divided into 
+categories. There are kinematics, ROS dependent and Map Object dependent 
+algorithms which help visualize path planning algorithms. 
 
 Technologies Used
 ~~~~~~~~~~~~~~~~~
 
-This section provides a list of technologies used for this component.
-The details for the technologies have already been provided in the
-Overview section.
+The libraries were developed on Ubuntu 16.04 operating system using Robotics 
+Operating System 2 and Python 3. 
 
 Component Overview
 ~~~~~~~~~~~~~~~~~~
 
 This section can take the form of a list of features.
 
-Phase Overview
-~~~~~~~~~~~~~~
-
-This is an extension of the Phase Overview above, but specific to this
-component. It is meant to be basically a brief list with space for
-marking the phase status.
-
 Architecture Diagram
 ~~~~~~~~~~~~~~~~~~~~~
 
-It is important to build and maintain an architecture diagram. However,
-it may be that a component is best described visually with a data flow
-diagram.
+Robots are inidividual classes, and they can be easily called and used by 
+including their classes in the file headers. Tutorials and examples are 
+provided to use each module.  
 
-Data Flow Diagram
-~~~~~~~~~~~~~~~~~
-
-It is important to build and maintain a data flow diagram. However, it
-may be that a component is best described visually with an architecture
-diagram.
 
 Design Details
 ~~~~~~~~~~~~~~
 
-This is where the details are presented and may contain subsections.
-Here is an example code listing:
+<insert code>
 
-::
 
-    #include <stdio.h>
-    #define N 10
-    /* Block
-     * comment */
-
-    int main()
-    {
-        int i;
-
-        // Line comment.
-        puts("Hello world!");
-
-        for (i = 0; i < N; i++)
-        {
-            puts("Python is also great for programmers!");
-        }
-
-        return 0;
-    }
-
-This code listing is not floating or automatically numbered. If you want
-auto-numbering, but it in the algorithm environment (not algorithmic
-however) shown above.
 
 Major Component #2
 -------------------
 
+Once again, since our main goal was education, we wanted this library to be 
+user friendly. Hence, we provided setup files, tutorials and heavily 
+documented the classes so that beginners who have no knowledge about robotics 
+or the operating system, spends very little time in understanding how to 
+install the dependencies and using the libraries. 
+
+
 Technologies Used
 ~~~~~~~~~~~~~~~~~
 
-This section provides a list of technologies used for this component.
-The details for the technologies have already been provided in the
-Overview section.
+The documentaion was done in the Python files itself. Vim and Gedit were used 
+to write them. Latex was used to format the project details and description 
+documents. All this is present on the GitHub repository 
+https://github.com/roboscienceorg/robolib
 
 Component Overview
 ~~~~~~~~~~~~~~~~~~
 
-This section can take the form of a list of features.
-
-Phase Overview
-~~~~~~~~~~~~~~
-
-This is an extension of the Phase Overview above, but specific to this
-component. It is meant to be basically a brief list with space for
-marking the phase status.
-
-Architecture Diagram
-~~~~~~~~~~~~~~~~~~~~~
-
-It is important to build and maintain an architecture diagram. However,
-it may be that a component is best described visually with a data flow
-diagram.
-
-Data Flow Diagram
-~~~~~~~~~~~~~~~~~
-
-It is important to build and maintain a data flow diagram. However, it
-may be that a component is best described visually with an architecture
-diagram.
+The user can just download the files on their desktop and just run them. 
 
 Design Details
 ~~~~~~~~~~~~~~
 
-This is where the details are presented and may contain subsections.
+
 
 Major Component #3
 -------------------
 
+This is the Map Object which helps move away from Veranda and ROS 2. It is 
+basically a data structure which helps the user make a robot, obstacles and a 
+goal, and diplays all this using matplotlib. It shows colors which tell user 
+how the planning was done and which route was most likely to be taken. 
+
 Technologies Used
 ~~~~~~~~~~~~~~~~~
 
-This section provides a list of technologies used for this component.
-The details for the technologies have already been provided in the
-Overview section.
+Matplotlib and Python 3 were used to develop the Map Object. Numpy was used to 
+speed up the calculations. 
 
 Component Overview
 ~~~~~~~~~~~~~~~~~~
 
-This section can take the form of a list of features.
+Helps make a robot
+Helps make obstacles
+Helps make a goal
+
+The user can either do this using matplotlib or hardcoding it at the beginning. 
+If the user decides to use the GUI, then he has to click finish to get done 
+with editing it.
 
 Phase Overview
 ~~~~~~~~~~~~~~
@@ -261,21 +228,7 @@ This is an extension of the Phase Overview above, but specific to this
 component. It is meant to be basically a brief list with space for
 marking the phase status.
 
-Architecture Diagram
-~~~~~~~~~~~~~~~~~~~~~
-
-It is important to build and maintain an architecture diagram. However,
-it may be that a component is best described visually with a data flow
-diagram.
-
-Data Flow Diagram
-~~~~~~~~~~~~~~~~~
-
-It is important to build and maintain a data flow diagram. However, it
-may be that a component is best described visually with an architecture
-diagram.
-
 Design Details
 ~~~~~~~~~~~~~~
 
-This is where the details are presented and may contain subsections.
+

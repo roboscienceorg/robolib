@@ -39,7 +39,10 @@ Client
 ------
 
 Our client and sponsor is Dr. Jeff McGough, professor at South Dakota 
-School of Mines and Technology. The developed software will supplement the open-source book found at http://www.roboscience.org.
+School of Mines and Technology. He has founded the RoboScience organization
+with the goal of fostering an open source robotics community focused on
+education. The developed software will supplement the open-source book found
+at http://www.roboscience.org and contribute to the purpose of RoboScience.
 
 Project
 -------
@@ -112,6 +115,8 @@ Stakeholders:
 
     -  Developers
 
+    -  Future Students
+
 
 Deliverables
 ------------
@@ -121,6 +126,7 @@ library. To align with the mission statement of both this project and the
 RoboScience organization, strong documentation and tutorials are required.
 
 This project will produce the following:
+
     - Library Source Code: This will be the actual library. The majority of the 
     library will be structures which the user can import and use within their 
     own Python scripts. The algorithms developed will be textbook routines 
