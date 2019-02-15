@@ -2,7 +2,8 @@
 
 Welcome! This repository is the home for the library supporting the 
 [RoboScience](http://www.roboscience.org/ "RoboScience Homepage") 
-open-source robotics community. The purpose of this library 
+open-source robotics community. The purpose of this library is to support
+education for both users and developers in the field of robotics.
 
 ## Installation
 
