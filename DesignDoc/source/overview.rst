@@ -121,25 +121,55 @@ Stakeholders:
 Deliverables
 ------------
 
-The deliverables of this project extend beyond the development of a useable library. To align with the mission statement of both this project and the RoboScience organization, strong documentation and tutorials are required.
+The deliverables of this project extend beyond the development of a useable 
+library. To align with the mission statement of both this project and the 
+RoboScience organization, strong documentation and tutorials are required.
 
 This project will produce the following:
-    - Library Source Code: This will be the actual library. The majority of the library will be structures which the user can import and use within their own Python scripts. The algorithms developed will be described in more details in the Deliverables section of this report. 
 
-    - Tutorials: This will be a collection of tutorials which showcase the various objects held in the library and numerous use cases for each object. These will be developed under the supervision of the RoboScience textbook editor to ensure that they are written in a manner consistent with the text. The purpose of these tutorials is to address the educational component of this library. The tutorials will reference the text to explain the computations which the provided objects undergo.
+    - Library Source Code: This will be the actual library. The majority of the 
+    library will be structures which the user can import and use within their 
+    own Python scripts. The algorithms developed will be textbook routines 
+    that are described on the RoboScience website under "Software". An external 
+    map tool will be provided which the user can use to visualize the 
+    algorithms. This removes the dependency of 2D simulation softwares like 
+    Veranda. 
 
-    - Documentation: This will be a thorough description of the library resources. Separate from tutorials, this will be utilized mainly by more experienced programmers who are looking to understand the inner-workings of the library without delving into the source code. This includes an API reference manual and the documentation you are currently reading.
+    - Tutorials: This will be a collection of tutorials which showcase the 
+    various objects held in the library and numerous use cases for each object. 
+    These will be developed under the supervision of the RoboScience textbook 
+    editor to ensure that they are written in a manner consistent with the text. 
+    This will be mainly referred to by beginners or users from non-technical 
+    backgrounds. 
 
-    - Setup files: These files will provide a simplistic install process for the user. It will install all necessary packages and provide the user with a list of useful instructions for their development. Specifically, this setup file will install the dependencies listed in "requirements.txt" found in the project repository via pip. It will also setup a virtual python environment which the user can use for further development.
+    - Documentation: This will be a thorough description of the library 
+    resources. Separate from tutorials, this will be utilized mainly by more 
+    experienced programmers who are looking to understand the inner-workings of 
+    the library without delving into the source code.
+
+    - Setup files: These files will provide a simplistic install process for 
+    the user. It will install all necessary packages and provide the user with 
+    a list of useful instructions for their development and it will even allow 
+    them to setup their own environment.
+    
+    - Veranda: Additional sensors, maps, robots and support routines will be 
+    provided for Veranda which the user will be able to use.
+    
+    - Machine Learning: Artificial Neural Networks for filters, planners, 
+    vision and kinematics will be provided. This will help the robot sense the 
+    environment in a better way and will help better visualize the algorithms. 
 
 
 Software
 ~~~~~~~~
 
-These tools will be built on Ubuntu 16.04 LTS (Xenial Xerus) for the Robotics Operating System 2.0 (ROS2).
-While not all components of the library will require ROS2, all will require Python3 with the SciPy Stack (numpy, scipy, matplotlib, etc.).
+These tools will be built on Ubuntu 16.04 LTS (Xenial Xerus) for the Robotics 
+Operating System 2.0 (ROS2).
+While not all components of the library will require ROS2, all will require 
+Python3 with the SciPy Stack (numpy, scipy, matplotlib, etc.).
 
-The intstallation instructions for ROS2 are provided in the Robotics book as well as on the ROS2 repository.
+The intstallation instructions for ROS2 are provided in the Robotics book as 
+well as on the ROS2 repository.
 
 Hardware
 ~~~~~~~~
