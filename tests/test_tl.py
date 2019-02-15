@@ -1,4 +1,4 @@
-import tl
+from context import tl
 import numpy as np
 
 def test_TL_zero_case():

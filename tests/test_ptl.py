@@ -1,7 +1,7 @@
-import ptl
+from context import ptl
 
 
-#assert 
+#assert
 
 def test_PTL_zero_case():
 	#test 0 case
