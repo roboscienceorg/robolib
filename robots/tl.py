@@ -118,8 +118,8 @@ class TL():
             The list is structured as [x, y].
         '''
         pos_list=[]
-        self._x = self._link_2*np.cos(theta_1+ttheta_2) + self._link_1*np.cos(theta_1)
-        self._y = self._link_2*np.sin(theta_1+ttheta_2) + self._link_1*np.sin(theta_1)
+        self._x = self._link_2*np.cos(theta_1+theta_2) + self._link_1*np.cos(theta_1)
+        self._y = self._link_2*np.sin(theta_1+theta_2) + self._link_1*np.sin(theta_1)
         
         pos_list.append([self._x, self._y])
         return pos_list
