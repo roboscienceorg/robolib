@@ -43,3 +43,15 @@ def test_TL_negative_case():
 
 	except Exception as e:
 		print(e)
+
+def test_TL_book_case():
+	#test book example x, y = 10.0, 8.0
+	try:
+		bot6 = tl.TL(15.0, 10.0)
+		x = bot2.FK(1.39408671883 , -2.13727804092)
+		#print (x)
+		#returns x = 10.000000000000004, 8.0
+		#assert
+
+	except Exception as e:
+		print(e)
