@@ -27,10 +27,10 @@ def test_get_neighbors():
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
-    assert bug3.get_neighbors(0, 0, grid) == (False, [(1, 0), (0, 1), (1, 1)])
-    assert bug3.get_neighbors(6, 3, grid) == (True, [(7,2), (6,2), (5,2), (5, 3), (5, 4)])
-    assert bug3.get_neighbors(14, 10, grid) == (True, [(14, 9), (13, 9), (13, 10), (13, 11)])
-    assert bug3.get_neighbors(22,22, grid) == (False, [(23,22), (23,21), (22,21), (21,21), (21,22), (21,23), (22,23), (23,23)])
+    assert bug3.get_neighbors(0, 0, bug3.grid) == (False, [(1, 0), (0, 1), (1, 1)])
+    assert bug3.get_neighbors(6, 3, bug3.grid) == (True, [(7,2), (6,2), (5,2), (5, 3), (5, 4)])
+    assert bug3.get_neighbors(14, 10, bug3.grid) == (True, [(14, 9), (13, 9), (13, 10), (13, 11)])
+    assert bug3.get_neighbors(22,22, bug3.grid) == (False, [(23,22), (23,21), (22,21), (21,21), (21,22), (21,23), (22,23), (23,23)])
     
 
 
