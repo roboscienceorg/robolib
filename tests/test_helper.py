@@ -1,8 +1,4 @@
-import os
-import sys
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-import algorithms.helper as helper
+from context import helper
 from math import isclose
 
 # Full grid: Range on x axis: 20, Range on y axis: 20, Points per side: 20 
