@@ -1,14 +1,53 @@
-class rnnFilter:
-    def __init__(self):
-        pass
+from keras.models import Sequential
+from keras.layers import LSTM, Dense, Dropout, SimpleRNN, Activation, RNN
+import math
+import numpy as np
+import pandas
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error
 
-    def run(self):
+
+class rnnFilter:
+    def __init__(self, start):
+        self.last = start
+        # create and fit the LSTM network
+        self.model = Sequential()
+        self.model.add(LSTM(128, input_shape=(6,1)))
+        self.model.add(Dense(3))
+        self.model.compile(loss='mean_squared_error', optimizer='adam')
+
+
+    def run(self, z):
+        t = z
+        z= np.append(self.last, z)
+        self.last = t
+        z = np.reshape(z, (1, z.shape[0],1))
+        return self.model.predict(z)
+        
+    # convert an array of values into a dataset matrix
+    def createDataset(self, dataset, look_back=1):
+        dataX, dataY = [], []
+        for i in range(len(dataset)-look_back):
+            a = dataset[i:(i+look_back+1)]
+            dataX.append(a)
+            dataY.append(dataset[i + look_back])
+        return np.array(dataX), np.array(dataY)
+
+    def train(self, z, x):
         """
         takes in saved last position, measured current position, and 
         measured velocity
         returns the estimated current position
         """
-        pass
+        #run z through
+        # update using x as correct
+        # reshape input to be [samples, time steps, features]
+        z,z2 = self.createDataset(z)
+        x = np.delete(x, 0,0)
+        z = np.reshape(z, (z.shape[0], z2.shape[1]*2,1))
+        x = np.reshape(x, (x.shape[0], x.shape[1]))
+        self.model.fit(z, x, epochs=400, batch_size=1, verbose=2)
+
 #run
 
 #if two sets of data sent in run in training mode
