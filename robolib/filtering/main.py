@@ -3,30 +3,19 @@ from math import *
 import numpy as np
 import pylab as plt
 from scipy import linalg
-#loop
-#read in the made up input sensor data, or create sensor data
-#make the data noisy
-#send the data into the neural net
-#when training send in the original unnoisy data as well
-#print out how the neural net did
-def main():
 
-    N = 100 # length of input
-    mu1, sigma1 = 0.0, 0.025 # process error
-    mu2, sigma2 = 0.0, 0.85 # observation error
-    var1 = sigma1*sigma1 
-    var2 = sigma2*sigma2
-    dt = 0.1
-    r = 4
-    dd = r*dt/2.0
-    L = 6
+
+def generateInput(N, mu1, sigma1, mu2, sigma2, dd, L):
+    # set up all the input data
     x = np.zeros((N,3))
     z = np.zeros((N,3))
-    t = np.linspace(0, 10, 100)
+    t = np.linspace(0, 10, N/2)
+    print(np.flip(t))
+    t= np.append(t,np.flip(t))
+    print(t)
     w1 = 1.5*np.sin(t)
     w2 = 1.0*np.cos(t)
     k = 1
-    # set up all the input data
     while (k<N):
         q = np.random.normal(mu1,sigma1,3) # process error
         r = np.random.normal(mu2,sigma2, 3) # observation error
@@ -34,13 +23,32 @@ def main():
         # x holds the actual position of the robot
         x[k,0] = x[k-1,0] + dd*(w1[k]+w2[k])*cos(x[k-1,2]) + q[0] # x
         x[k,1] = x[k-1,1] + dd*(w1[k]+w2[k])*sin(x[k-1,2]) + q[1] # y
-        x[k,2] = x[k-1,2] + dd*(w1[k]-w2[k])/L + q[2] # ?
+        x[k,2] = x[k-1,2] + dd*(w1[k]-w2[k])/L + q[2] # angle
         # set up the observed data
         # z holds what is sent in
         z[k,0] = x[k,0] + r[0] # x
         z[k,1] = x[k,1] + r[1] # y
-        z[k,2] = x[k,2] + r[2] # ?
+        z[k,2] = x[k,2] + r[2] # angle
         k = k+1
+    return x, z
+    
+
+
+def main():
+
+    N = 200 # length of input
+    mu1, sigma1 = 0.0, 0.025 # process error
+    mu2, sigma2 = 0.0, 0.85 # observation error
+    #var1 = sigma1*sigma1 
+    #var2 = sigma2*sigma2
+    dt = 0.1
+    r = 4
+    dd = r*dt/2.0
+    L = 6
+
+    #generate input data
+    x, z = generateInput(N, mu1, sigma1, mu2, sigma2, dd, L)
+
 
     #H = np.array([[1,0,0],[0,1,0],[0,0,1]])
     #HT = H.T

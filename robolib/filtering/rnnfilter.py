@@ -1,4 +1,5 @@
 from keras.models import Sequential
+from keras.utils.vis_utils import plot_model
 from keras.layers import LSTM, Dense, Dropout, SimpleRNN, Activation, RNN
 import math
 import numpy as np
@@ -12,9 +13,15 @@ class rnnFilter:
         self.last = start
         # create and fit the LSTM network
         self.model = Sequential()
-        self.model.add(LSTM(128, input_shape=(6,1)))
+        self.model.add(LSTM(128, return_sequences=True, input_shape=(6,1)))
+        self.model.add(LSTM(128, return_sequences=True))
+        self.model.add(LSTM(128))
+        #self.model.add(Dense(128))
+        self.model.add(Dense(64))
         self.model.add(Dense(3))
         self.model.compile(loss='mean_squared_error', optimizer='adam')
+        self.model.summary()
+        plot_model(self.model, show_shapes=True, to_file='model.png')
 
 
     def run(self, z):
@@ -46,7 +53,7 @@ class rnnFilter:
         x = np.delete(x, 0,0)
         z = np.reshape(z, (z.shape[0], z2.shape[1]*2,1))
         x = np.reshape(x, (x.shape[0], x.shape[1]))
-        self.model.fit(z, x, epochs=400, batch_size=1, verbose=2)
+        self.model.fit(z, x, epochs=317, batch_size=1, verbose=2)
 
 #run
 
