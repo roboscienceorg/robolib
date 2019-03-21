@@ -9,12 +9,12 @@ def generateInput(N, mu1, sigma1, mu2, sigma2, dd, L):
     # set up all the input data
     x = np.zeros((N,3))
     z = np.zeros((N,3))
-    t = np.linspace(0, 10, N/2)
-    print(np.flip(t))
-    t= np.append(t,np.flip(t))
-    print(t)
+    t = np.linspace(0, 20, N)
+    #t = np.append(t,np.flip(t))
     w1 = 1.5*np.sin(t)
     w2 = 1.0*np.cos(t)
+    #plt.plot(t, w1,'r.', t, w2,'g.')
+    #plt.show()
     k = 1
     while (k<N):
         q = np.random.normal(mu1,sigma1,3) # process error
@@ -30,6 +30,10 @@ def generateInput(N, mu1, sigma1, mu2, sigma2, dd, L):
         z[k,1] = x[k,1] + r[1] # y
         z[k,2] = x[k,2] + r[2] # angle
         k = k+1
+    #plt.plot(t, x[:,0],'r.', t, x[:,1],'g.', t, x[:,2], 'b.')
+    #plt.show()
+    #plt.plot(x[:,0], x[:,1], 'b.')
+    #plt.show()
     return x, z
     
 
@@ -46,8 +50,6 @@ def main():
     dd = r*dt/2.0
     L = 6
 
-    #generate input data
-    x, z = generateInput(N, mu1, sigma1, mu2, sigma2, dd, L)
 
 
     #H = np.array([[1,0,0],[0,1,0],[0,0,1]])
@@ -55,7 +57,7 @@ def main():
     #V = np.array([[var1,0,0],[0,var1,0],[0,0,var1]])
     #W = np.array([[var2,0,0],[0,var2,0],[0,0,var2]])
     #P = np.zeros((N,3,3))
-    xf = np.zeros((N,3)) # position after kf
+    #xf = np.zeros((N,3)) # position after kf
     #xp = np.zeros(3)
     #sp = np.zeros(3)
     #k = 1
@@ -86,11 +88,26 @@ def main():
 
     #init with how accurate the input is?
     # how the array sent in relates - how to build the network
-    f = rnnFilter(z[0])
+    f = rnnFilter()
 
     #training
-    f.train(z, x)
+    k = 0
+    while k < 1 :
+        print("Train set : ", k)
+        #generate input data
+        x, z = generateInput(N, mu1, sigma1, mu2, sigma2, dd, L)
+        f.train(z, x)
+        k = k + 1
 
+    fname = "test.h5"
+    #test save and load
+    f.save(fname)
+    f.load(fname)
+
+
+    xf = np.zeros((N,3)) # position after kf
+    #generate input data
+    x, z = generateInput(N, mu1, sigma1, mu2, sigma2, dd, L)
     k = 0
     while k < N :
         xf[k] = f.run(z[k])

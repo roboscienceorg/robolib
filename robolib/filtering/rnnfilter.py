@@ -9,20 +9,38 @@ from sklearn.metrics import mean_squared_error
 
 
 class rnnFilter:
-    def __init__(self, start):
+    def __init__(self, start = [0.,0.,0.]):
         self.last = start
         # create and fit the LSTM network
         self.model = Sequential()
         self.model.add(LSTM(128, return_sequences=True, input_shape=(6,1)))
-        self.model.add(LSTM(128, return_sequences=True))
+        #self.model.add(LSTM(128, return_sequences=True))
         self.model.add(LSTM(128))
-        #self.model.add(Dense(128))
+        self.model.add(Dense(128))
         self.model.add(Dense(64))
         self.model.add(Dense(3))
         self.model.compile(loss='mean_squared_error', optimizer='adam')
         self.model.summary()
-        plot_model(self.model, show_shapes=True, to_file='model.png')
+        #plot_model(self.model, show_shapes=True, to_file='model.png')
 
+    def load(self, fname):
+        # load json and create model
+        #json_file = open('model.json', 'r')
+        #loaded_model_json = json_file.read()
+        #json_file.close()
+        #loaded_model = model_from_json(loaded_model_json)
+        # load weights into new model
+        self.model.load_weights(fname)
+        print("Loaded model from disk")
+
+    def save(self, fname):
+        # serialize model to JSON
+        #model_json = model.to_json()
+        #with open("model.json", "w") as json_file:
+        #    json_file.write(model_json)
+        # serialize weights to HDF5
+        self.model.save_weights(fname)
+        print("Saved model to disk")
 
     def run(self, z):
         t = z
@@ -53,7 +71,9 @@ class rnnFilter:
         x = np.delete(x, 0,0)
         z = np.reshape(z, (z.shape[0], z2.shape[1]*2,1))
         x = np.reshape(x, (x.shape[0], x.shape[1]))
-        self.model.fit(z, x, epochs=317, batch_size=1, verbose=2)
+        self.model.fit(z, x, epochs=50, batch_size=1, verbose=2)
+        #fit_generator
+        #self.model.train_on_batch(z, x)
 
 #run
 
