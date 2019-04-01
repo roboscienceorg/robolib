@@ -100,12 +100,12 @@
 
 \author{
 Naomi Green, Soham Naik, Aaron Campbell, Jeremy Goens\\
-Department of Mathematics and Computer Science\\
+Department of Computer Science and Engineering\\
 South Dakota School of Mines and Technology\\
 Rapid City, SD 57701\\
 \and
 Jeff McGough
-Department of Mathematics and Computer Science\\
+Department of Computer Science and Engineering\\
 South Dakota School of Mines and Technology\\
 Rapid City, SD 57701\\
 Jeff.McGough@sdsmt.edu
@@ -116,6 +116,8 @@ Jeff.McGough@sdsmt.edu
 \thispagestyle{empty}
 
 \section*{\centering Abstract}
+Robots make use of different sensors to make sense of the world around them. 
+
 This paper will analyze existing methods and designs of signal processing and kinematics in robotics, as well as explore the possibilities of using neural networks to replace each of these pieces and processing techniques individually so that a robot can act autonomously and intelligently and makes better decisions. 
 
 The purpose of replacing filtering is to write a network that can learn what signals are real and what is noise. This paper looks at filtering for the different sensor signals. A kalman filter is the most standard, simple filter that is focused on. The goal is not trying to write a Neural Network that works the same as the kalman filter, or to have it learn to process the information the same as the algorithms behind it. Instead, it is to train the network to be its own filter. Training the network consists of a clean signal in which noise is introduced, the network is meant to return the original signal. Testing is done using different techniques of introducing noise to more accurately represent the noise a sensor would have.
@@ -126,28 +128,6 @@ The other big aspect of artificial intelligence in robotics that is covered is t
 
 For the kinematics, Genetic algorithms were tested as well as Neural Networks. Various unsupervised and supervised methods were looked at to check the relationship between the cartesian space and the joint space of a differential drive robot and a 2 link manipulator. 
 
-end
-
-
-Evolutionary Algorithms have demonstrated results in a vast array of
-optimization problems and are regularly employed in engineering
-design.  However, many mathematical problems have shown traditional
-methods to be the more effective approach.  In the case of symbolic
-computation, it may be difficult or not feasible to extend 
-numerical approachs and thus leave the door open to other methods.
-
-In this paper, we study the application of a 
-grammar-based approach in Evolutionary Computing known as Grammatical
-Evolution (GE) to a selected problem in control theory.  Grammatical
-evolution is a variation of genetic programming.  GE does not operate
-directly on the expression but following a lead from nature indirectly
-through genome strings.  These evolved strings are used to select
-production rules in a BNF grammar to generate algebraic expressions
-which are potential solutions to the problem at hand. Traditional
-approaches have been plagued by unrestrained expression growth,
-stagnation and lack of convergence.  These are addressed by the more
-biologically realistic BNF representation and variations in the
-genetic operators.  
 
 
 \newpage
@@ -719,12 +699,21 @@ self.model = Sequential()
 epochs = 20
 training datasets = 3000
 
-LSTM nodes = 1   Loss = 14.77984
-LSTM nodes = 2   Loss = 3.71457
-LSTM nodes = 3   Loss = 0.69975704
-LSTM nodes = 4   Loss = 3.71457   
-   
-        
+LSTM nodes = 1   Loss = 22.02988673865795
+LSTM nodes = 2   Loss = 4.7541071283817296
+LSTM nodes = 3   Loss = 1.0286707907915116
+LSTM nodes = 4   Loss = 1.5408772403001785
+LSTM nodes = 5   Loss = 3.530536
+LSTM nodes = 6   Loss = 0.54314744
+LSTM nodes = 7   Loss = 0.3609107
+LSTM nodes = 8   Loss = 0.4556496
+LSTM nodes = 9   Loss = 0.9998089886456728
+LSTM nodes = 10  Loss = 0.4759439
+LSTM nodes = 11  Loss = 0.9570983
+LSTM nodes = 12  Loss = 
+
+change the noise
+cuda in keras
 
 \end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

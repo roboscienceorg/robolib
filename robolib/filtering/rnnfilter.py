@@ -13,11 +13,11 @@ class rnnFilter:
         self.last = start
         # create and fit the LSTM network
         self.model = Sequential()
-        self.model.add(LSTM(128, return_sequences=True, input_shape=(6,1)))
+        self.model.add(LSTM(100, input_shape=(6,1)))
         #self.model.add(LSTM(128, return_sequences=True))
-        self.model.add(LSTM(128))
-        self.model.add(Dense(128))
-        self.model.add(Dense(64))
+        #self.model.add(LSTM(128))
+        #self.model.add(Dense(128))
+        #self.model.add(Dense(64))
         self.model.add(Dense(3))
         self.model.compile(loss='mean_squared_error', optimizer='adam')
         self.model.summary()
@@ -71,9 +71,15 @@ class rnnFilter:
         x = np.delete(x, 0,0)
         z = np.reshape(z, (z.shape[0], z2.shape[1]*2,1))
         x = np.reshape(x, (x.shape[0], x.shape[1]))
-        self.model.fit(z, x, epochs=50, batch_size=1, verbose=2)
+        self.model.fit(z, x, epochs=1, verbose=0)
         #fit_generator
         #self.model.train_on_batch(z, x)
+
+    def eval(self, z, x):
+        z,z2 = self.createDataset(z)
+        x = np.delete(x, 0,0)
+        z = np.reshape(z, (z.shape[0], z2.shape[1]*2,1))
+        return self.model.test_on_batch(z, x) 
 
 #run
 
