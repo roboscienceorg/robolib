@@ -110,7 +110,6 @@ be covered by the maintainer of the project, but hopefully future grants or dona
 
 
 
-
 Market and Competition
 ----------------------
 
@@ -145,13 +144,20 @@ merge. The end goal is to provide an easy-to-access learning environment.
 Regulatory environment
 ----------------------
 
-As an open-source project, there is not much regulation in the environment. However, if this 
-were to formally be attached to a class taught by a University, it would be important to ensure
-no unmet regulations are inherited from the academic world.
+As an open-source project, there is not much regulation in the environment in terms of user protection. 
+However, if this were to formally be attached to a class taught by a University, it would be
+important to ensure no unmet regulations are inherited from the academic world.
 
-Although there may not be formal regulations, there is also a moral responsibility to ensure that
-the education provided is factually accurate, as this could potentially inform future robotics
-professionals.
+That being said, any user of the project must abide by the agreement described by our license, 
+the Educational Community Licence V2.0. In general terms, this license allows for the free use
+and redistribution of the project, provided that any modified and redistributed code includes the
+license as well as a notice of modifications. This license also exonerates any of the contributors
+from losses or damages caused by the use of the project. 
+
+Although there are few formal regulations in the open-source environment, there is also a moral
+responsibility to ensure that the education provided is factually accurate, as this could
+potentially inform future robotics professionals.
+
 
 Intellectual Property and Freedom to Operate
 --------------------------------------------
@@ -160,6 +166,7 @@ As this is an open-source project, the intellectual property remains open-source
 distribution of the source code is subject to the Educational Community License Version 2.0
 (https://opensource.org/licenses/ECL-2.0).
 
+
 Management Team and Advisors
 ----------------------------
 
@@ -167,11 +174,13 @@ The maintainer of this project is Dr. Jeff McGough. The current management team 
 Senior Design team as well as current robotics students. This management will change as
 contributors change, so Dr. McGough will remain the maintainer of the project.
 
+
 Sources and Uses of Capital
 ---------------------------
 
 As previously stated, there is very little capital involved in this project simply due to
-its open-source nature. Items such as the RoboScience website will remain with 
+its open-source nature. Items such as the RoboScience website will remain with client,
+Dr. McGough, as he is currently responsible for the payment and maintenance of the site.
 
 
 
@@ -192,4 +201,17 @@ Some useful metrics for this project would be the following:
 Exit Plan
 ---------
 
-Not sure what to put here.
+One of the long-term goals is to foster a self-sufficient community of contributors that will
+keep this project maintained. That being said, the current development team has decided with our
+client that we will not continue as the maintainers of the project post-graduation. In an effort
+to ensure there is a sufficient technical hand-off to those who follow, we will create a Maintainer's
+Guide to supplement the Contributor's Guide. The purpose of this document would be to impart the
+philosophy behind our various contribution strategies and provide checklists of items that need
+to be completed for common tasks such as pushing a new release out or fixing a bug.
+
+Beyond these process items, the transition guide will contain all the required usernames and passwords
+to access 3rd party applications such as our Continuous Integration framework, Travis CI.
+
+We will be sure to include our contact information in case there are items which we forget to add in
+the Maintainer's Guide.
+
