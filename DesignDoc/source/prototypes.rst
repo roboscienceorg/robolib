@@ -99,7 +99,7 @@ October 5th - October 18th
 This was the first sprint in which we dug into the meat of the project and 
 hashed out what sort of class structure we were looking for. We took the time
 to review the book for the next couple weeks examples, as well as meeting with 
-our Client to get their views on what the expected out of the project.
+our client to get their views on what the expected out of the project.
 
 This being the first major sprint took us a little bit longer than expected for
 having such a light amount of structure; This was in part to working out a time 
@@ -501,7 +501,7 @@ continue making progress.
 
 Most of this Sprint was spent finishing up testing problems for the functions that we had that already 
 existed, as well as looking at diffrent ways of distributing this program. Since this is an open source
-Project, the first meeting back was used to decide on a couple of different licenses we could use.
+project, the first meeting back was used to decide on a couple of different licenses we could use.
 
 Sprint Backlog
 ~~~~~~~~~~~~~~
@@ -657,7 +657,7 @@ project, but since we had gained a new teammate, it was a good time for it as we
 
 
 Sprint 10 Report
----------------
+----------------
 February 24th - March 16th
 
 This sprint was a much slower sprint due to the decrease in module completion. This did however
@@ -709,7 +709,7 @@ Sprint Retrospective
 
 
 Sprint 11 Report
----------------
+----------------
 March 17th - March 30th
 
 This sprint brough us to the end of the paper, and to the endge of building the filters for the
@@ -754,7 +754,7 @@ Sprint Retrospective
 
 
 Sprint 12 Report
----------------
+----------------
 March 31st - April 13th
 
 Sprint Backlog
@@ -797,7 +797,7 @@ Place your burndown charts, team velocity information, etc here if they
 are not discussed above.
 
 Sprint 13 Report
----------------
+----------------
 April 14th - April 16th
 
 Include your report here.  You may have sent the report to your client,

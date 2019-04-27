@@ -16,11 +16,7 @@ Senior Design Documentation
    prototypes
    deploy
    userdocs
-   classref
-   results
-   pubs
    thanks
-   supporting
 
 
 

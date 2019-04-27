@@ -22,7 +22,8 @@ Current Version [0.0.1]
 ========  ============  =======  ================
   Date       Author     Version     Comments
 --------  ------------  -------  ----------------
-9/28/18    Soham Naik    0.0.1     First Draft
+09/28/18  Soham Naik    1        First Draft
+04/26/19  Aaron C.      2        Submission Review
 ========  ============  =======  ================
 
 
@@ -33,6 +34,7 @@ Team Members and Team Name
 RoboScience - 
 *Aaron Campbell,*
 *Jeremy Goens,*
+*Naomi Green,*
 *Soham Naik*
 
 Client
@@ -158,6 +160,7 @@ This project will produce the following:
     - Machine Learning: Artificial Neural Networks for filters, planners, 
     vision and kinematics will be provided. This will help the robot sense the 
     environment in a better way and will help better visualize the algorithms. 
+
 
 
 Software
