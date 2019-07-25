@@ -1,8 +1,10 @@
 import numpy as np
 
+
 class Sensor_Error(Exception):
     def __init__(self, message):
         self.message = message
+
 
 class Sensor():
     '''
@@ -12,21 +14,21 @@ class Sensor():
     data read from a simulated robot.
     '''
 
-    def __init__(self, mean, cov ):
+    def __init__(self, mean, cov):
         '''
         This function instantiates the sensor. Currently, the sensor takes
-        in simply a mean and covariance. These may be either numbers or 
+        in simply a mean and covariance. These may be either numbers or
         arrays for higher dimensional sensors.
 
         Parameters
         ----------
-        mean:  Numeric or 1D Array of Numerics
-            This is the mean of the Gaussian distribution which the sensor 
-            errors will be pulled from. An array indicates a multi-variate
-            distribution.
-        cov:
-            The covariance matrix of the Gaussian distribution which the 
-            sensor erros will be pulled from. It must be symmetric and 
+        mean:  1D Array of Numerics
+            This is the mean of the Gaussian distribution which the sensor
+            errors will be pulled from. A multi-valued array indicates a 
+            multi-variate distribution.
+        cov: 2D Array of Numerics (May be one element)
+            The covariance matrix of the Gaussian distribution which the
+            sensor erros will be pulled from. It must be symmetric and
             positive-semidefinite for proper sampling (from Scipy).
 
         Returns
@@ -37,17 +39,28 @@ class Sensor():
         try:
             self._mean = np.array(mean)
             self._cov = np.array(cov)
+            n = self._mean.shape[0]
         except:
-            return Sensor_Error("Either the mean or covariance could not be \
+            raise ValueError("Either the mean or covariance could not be \
                     coerced to a NumPy array. Please check your values.")
 
-        n = self._mean.shape[0]
+        if len(self._mean.shape) != 1:
+            raise ValueError("Mean must be a row-oriented 1D Array")
 
-        if self._cov.shape[0] != n and self._cov.shape[1] != n:
-            raise Sensor_Error("Mean and Covariance sizes are mismatched")
+        # Check Covariance Dimensions
+        shape = self._cov.shape
+        if len(shape) != 1 and len(shape) != 2:
+            raise ValueError("Covariance matrix is not a supported dimension")
+
+        for i in range(len(shape)):
+            if shape[i] != len(shape):
+                raise ValueError("Covariance matrix must be square")
+
+        # Check Mismatched Dimensions
+        if self._cov.shape[0] != n:
+            raise ValueError("Mean and Covariance sizes are mismatched")
 
         self._dimension = n
-
 
     @property
     def mean(self):
@@ -76,7 +89,8 @@ class Sensor():
         Sensor_Error:
             when the provided mean(s) don't match the sensor dimension.
         """
-        if value.shape[0] != self.dimension:
+        value = np.array(value)
+        if value.shape != self.mean.shape:
             raise Sensor_Error("Provided mean(s) does not match \
                     the Sensor's dimension")
 
@@ -97,7 +111,7 @@ class Sensor():
 
     @cov.setter
     def cov(self, value):
-         """
+        """
         Setter for the error distribution covariance matrix.
 
         Parameters
@@ -110,10 +124,10 @@ class Sensor():
         Sensor_Error:
             when the provided covariance matrix don't match the sensor dimension.
         """
+        value = np.array(value)
 
-        if value.shape[0] != self.dimension or value.shape[1] != self.dimension:
+        if value.shape != self.cov.shape: 
             raise Sensor_Error("Provided covariance matrix does not match the Sensor Dimension")
-
         else:
             self._cov = value
 
