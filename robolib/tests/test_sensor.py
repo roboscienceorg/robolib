@@ -16,30 +16,30 @@ def test_sensor_instantiation_success_1D():
     assert isinstance(s, sensor.Sensor)
 
 def test_sensor_instantiation_success_2D():
-    x = [randint(MIN_INT, MAX_INT) + random()]
-    y = [randint(MIN_INT, MAX_INT) + random()]
-    z = [randint(MIN_INT, MAX_INT) + random()]
+    x = randint(MIN_INT, MAX_INT) + random()
+    y = randint(MIN_INT, MAX_INT) + random()
+    z = randint(MIN_INT, MAX_INT) + random()
 
     s = sensor.Sensor([x, y], [[x, y], [y, z]])
     assert isinstance(s, sensor.Sensor)
 
 @raises(ValueError)
 def test_sensor_instantiation_failure_mean_size():
-    x = [randint(MIN_INT, MAX_INT) + random()]
-    y = [randint(MIN_INT, MAX_INT) + random()]
-    z = [randint(MIN_INT, MAX_INT) + random()]
+    x = randint(MIN_INT, MAX_INT) + random()
+    y = randint(MIN_INT, MAX_INT) + random()
+    z = randint(MIN_INT, MAX_INT) + random()
 
     s = sensor.Sensor([ [x], [y] ], [z] )
 
 @raises(ValueError)
 def test_sensor_instantiation_failure_mean():
-    x = [randint(MIN_INT, MAX_INT) + random()]
-    s = sensor.Sensor("not a number", x)
+    x = randint(MIN_INT, MAX_INT) + random()
+    s = sensor.Sensor("not a number", [x])
 
 @raises(ValueError)
 def test_sensor_instantiation_failure_cov():
-    x = [randint(MIN_INT, MAX_INT) + random()]
-    s = sensor.Sensor(x, "Not a number")
+    x = randint(MIN_INT, MAX_INT) + random()
+    s = sensor.Sensor([x], "Not a number")
 
 @raises(ValueError)
 def test_sensor_instantiation_failure_mismatched_dimensions():
@@ -53,7 +53,7 @@ def test_mean_getter():
     y = randint(MIN_INT, MAX_INT) + random()
 
     s = sensor.Sensor([x], [y])
-    assert s.mean == x
+    assert s.mean == [x]
 
 def test_mean_setter():
     x = randint(MIN_INT, MAX_INT) + random()
@@ -61,15 +61,15 @@ def test_mean_setter():
     z = randint(MIN_INT, MAX_INT) + random()
 
     s = sensor.Sensor([x], [y])
-    s.mean = z
-    assert s.mean == z
+    s.mean = [z]
+    assert s.mean == [z]
 
 def test_cov_getter():
     x = randint(MIN_INT, MAX_INT) + random()
     y = randint(MIN_INT, MAX_INT) + random()
 
     s = sensor.Sensor([x], [y])
-    assert s.mean == y
+    assert s.cov == [y]
 
 def test_cov_setter():
     x = randint(MIN_INT, MAX_INT) + random()
