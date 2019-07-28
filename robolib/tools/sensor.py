@@ -153,8 +153,10 @@ class Sensor():
         ----------
         orig_data: Array of Numerics
             This is the data which the sensor should add error to. The dimensions
-            of the data should be compatible with the Sensor's dimensions. Each
-            row of the array is treated as another data point.
+            of the data should be compatible with the Sensor's dimension.
+
+            Each row of the matrix should be a new data point, so for m data points
+            where each point has n dimensions, the matrix should be m x n.
 
         Returns
         -------
@@ -164,22 +166,23 @@ class Sensor():
 
         Raises
         ------
-        Sensor_Error:
-            when the data is not compatible with the Sensor's dimensions.
+        ValueError:
+            when the data provided does not meet speciications (not 2D array, wrong dimension, etc.)
         '''
 
         data = np.array(orig_data)
 
-        if data.shape[0] != self.dimension:
-            raise Sensor_Error("Data provided does not match sensor dimensions")
+        if data.shape[-1] != self.dimension:
+            raise ValueError("Data provided does not match sensor dimensions")
+        elif len(data.shape) != 2:
+            raise ValueError("Data provided is not a 2D array")
 
         else:
             dimension = self.dimension
-            n = data.shape[1]
+            n = data.shape[0]
             samples = np.random.multivariate_normal(self.mean, self.cov, n)
-
-            for i in range(dimension):
-                for j in range(n):
-                    data[i][j] = data[i][j] + samples[j][i]
+            for i in range(n):
+                for j in range(dimension):
+                    data[i][j] = data[i][j] + samples[i][j]
 
             return data
