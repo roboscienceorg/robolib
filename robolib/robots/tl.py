@@ -12,13 +12,7 @@ class TL():
     This class represents a Two-Link Manipulator. The user may construct a given
     manipulator with the size of the two links. The links are treated as resting
     along the x axes, and thus have a 0 value for theta_1, and a 180 for theta_2.
-    
-    Parameters
-    ----------
-    link_1:  Numeric
-        This is the length of first link attached directly to the base.
-    link_2:   Numeric
-        This is the length of the second link attached to the end of link_1
+
     '''
 
     def __init__(self, link_1, link_2):
@@ -28,10 +22,10 @@ class TL():
 
         Parameters
         ----------
-        link_1: Numeric
-            The length of the first link (the one connected to the base)
-        link_2: Numeric
-            The length of the second link (the one connected to the first)
+        link_1:  Numeric
+            This is the length of first link attached directly to the base.
+        link_2:   Numeric
+            This is the length of the second link attached to the end of link_1
 
         Returns
         -------
@@ -205,7 +199,7 @@ class TL():
         ValueError:
             - When the supplied list does not contain tuples of length 2
             - When the supplied points are not numeric
-            - When the 
+            - When a point in the list is outside the space that the robot can reach
         '''
 
         ang_list=[]
