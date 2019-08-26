@@ -1,7 +1,7 @@
 import numpy as np
 import numbers
 
-from math import sqrt
+from math import sqrt, atan2, sin, cos
 
 class TL_Error(Exception):
     def __init__(self, message):
@@ -40,7 +40,7 @@ class TL():
         Raises
         ------
         ValueError:
-            When either link_1 or link_2 is not numeric
+            - When either link_1 or link_2 is not numeric or not positive
         '''
 
         if (not isinstance(link_1, numbers.Number) or not isinstance(link_2, numbers.Number) 
@@ -143,7 +143,9 @@ class TL():
 
         Raises
         ------
-        ValueError: The passed angles are not valid numeric values
+        ValueError: 
+            - When the provided list is not of tuples of length 2
+            - When the passed angles are not valid numeric values
         '''
         pos_list = []
         xpos = 0.0
@@ -197,6 +199,13 @@ class TL():
             This list contains the angular values of each arm to achieve the
             corresponding effector position. The state of the robot will
             remain as the last item in the list.
+
+        Raises
+        ------
+        ValueError:
+            - When the supplied list does not contain tuples of length 2
+            - When the supplied points are not numeric
+            - When the 
         '''
 
         ang_list=[]
@@ -210,14 +219,14 @@ class TL():
             xpos = position[0]
             ypos = position[1]
 
-            if not isinstance(theta_1, numbers.Number) or not isinstance(theta_2, numbers.Number):
+            if not isinstance(xpos, numbers.Number) or not isinstance(ypos, numbers.Number):
                 raise ValueError("Invalid Argument - Both x and y values must be numeric")
             elif sqrt(xpos**2+ ypos**2) > (self.link_1 + self.link_2):
                 raise ValueError("Invalid Argument - The x and y position specified is beyond the robot's reachable area.")
 
-            d = (xpos**2+ypos**2-self.link_1**2-self.link_2**2)/(2*self.link_1*self.link_2)
-            theta_2 = np.arctan2(-np.sqrt(1.0-d**2),d)
-            theta_1 = np.arctan2(ypos,xpos) - np.arctan2(self.link_2*np.sin(self.theta_2),self.link_1+self.link_2*np.cos(self.theta_2))
+            d = (xpos**2.0+ypos**2.0-self.link_1**2.0-self.link_2**2.0)/(2.0*self.link_1*self.link_2)
+            theta_2 = np.arctan2(-np.sqrt(1.0-d**2.0),d)
+            theta_1 = np.arctan2(ypos,xpos) - np.arctan2(self.link_2*np.sin(theta_2),self.link_1+self.link_2*np.cos(theta_2))
             ang_list.append( (theta_1, theta_2) )
 
         # Update the state

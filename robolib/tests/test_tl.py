@@ -7,6 +7,10 @@ from nose.tools import raises
 MAX_INT = 10000
 MIN_INT = 1
 
+# Helper for comparison
+def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
+    return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
+
 def test_tl_instatiation_randomint_success():
     x = randint(MIN_INT, MAX_INT)
     y = randint(MIN_INT, MAX_INT)
@@ -51,6 +55,15 @@ def test_TL_IK_bookexample_success():
     bot = tl.TL(15.0, 10.0)
 
     ang_list = bot.IK( [(10.0, 8.0)] )
-    print(ang_list)
     assert ang_list[0][0] > 1.393 and ang_list[0][0] < 1.395
     assert ang_list[0][1] > -2.138 and ang_list[0][1] < -2.136
+
+def test_TL_IK_FK_bookexample_success():
+    bot = tl.TL(15.0, 10.0)
+
+    ang_list = bot.IK( [(10.0, 8.0)] )
+    pos_list = bot.FK( ang_list )
+
+    assert isclose( pos_list[0][0], 10.0 )
+    assert isclose( pos_list[0][1], 8.0 )
+
