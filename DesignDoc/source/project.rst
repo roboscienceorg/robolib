@@ -104,8 +104,7 @@ Intellectual Property and Licensing
 The Intellectual Property will be open-source and not the property of either the stakeholders or
 the senior design team. 
 
-As for licensing, this product will be subject to an open-source license which has not been
-decided at this time.
+This project has been licensed under the Educational Community License Version 2.0.
 
 Sprint Overview
 ---------------
@@ -162,7 +161,7 @@ The source control used is Git, hosted on Github.com. Git can be installed
 via :code:`sudo apt-get install git`
     
 If a developer would like to contribute, he or she may do so by submitting either
-a bug report or a pull request at the repository site https://github.com/roboscienceorg/robolib.
+a bug report or viewing our [contributors guide](https://github.com/roboscienceorg/robolib/blob/master/CONTRIBUTING.md)
 
 
 Dependencies

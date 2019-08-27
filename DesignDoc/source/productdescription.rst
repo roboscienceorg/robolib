@@ -9,7 +9,7 @@ Product Description
 
 The product developed by this library is two-fold: a library for use with an
 introductory-level robotics course and a thorough set of tutorials which not
-only explain the use of the library but link to the relevant sections of the
+only explain the use of the library but also link to the relevant sections of the
 online book found at http://www.roboscience.org/.
 
 The Library

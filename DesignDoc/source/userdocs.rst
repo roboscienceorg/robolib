@@ -1,26 +1,10 @@
 User Documentation
 ==================
 
-This section should contain the basis for any end user documentation for
-the system. End user documentation would cover the basic steps for setup
-and use of the system. It is likely that the majority of this section
-would be present in its own document to be delivered to the end user.
-However, it is recommended the original is contained and maintained in
-this document.
+There are two main types of users for our project: contributors and people who use the library.
 
-User Guide
-----------
+For the contributors, we have a contribution guide and code of conduct on our repository [here](https://github.com/roboscienceorg/robolib/blob/master/CONTRIBUTING.md) and [here](https://github.com/roboscienceorg/robolib/blob/master/CODE_OF_CONDUCT.md), respectively.
 
-The source for the user guide can go here. You have some options for how
-to handle the user docs. If you have some newpage commands around the
-guide then you can just print out those pages. If a different formatting
-is required, then have the source in a separate file userguide.tex and
-include that file here. That file can also be included into a driver
-(like the senior design template) which has the client specified
-formatting. Again, this is a single source approach.
-
-Installation Guide
-------------------
-
-Programmer Manual
------------------
+The API documentation will be generated with Python Sphinx and maintained on the RoboScience website with tutorials 
+for each module. This will appear as soon as the RoboScience website is complete. Upon completion, this document 
+will be updated to link to the documentation.
