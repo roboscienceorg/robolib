@@ -1,7 +1,8 @@
+
 Sprint Results and Prototypes
 =============================
 
-This chapter is for recording the results of each sprint and documenting
+This chapter is for recording the results of each sprint and documenting 
 the evolving product. It is a historical record of what you accomplished
 in 464/465. This should be organized according to Sprints. It should
 have the basic description of the sprint deliverable and what was
@@ -99,7 +100,7 @@ October 5th - October 18th
 This was the first sprint in which we dug into the meat of the project and 
 hashed out what sort of class structure we were looking for. We took the time
 to review the book for the next couple weeks examples, as well as meeting with 
-our client to get their views on what the expected out of the project.
+our Client to get their views on what the expected out of the project.
 
 This being the first major sprint took us a little bit longer than expected for
 having such a light amount of structure; This was in part to working out a time 
@@ -430,7 +431,7 @@ future sprints.
 
 Sprint 6 Report
 ---------------
-November 30th - December 21st
+November 30th - Current
 
 This sprint is a bit of a develomental backlog. With the changes that happened during
 the last two sprints, we are looking at finishing the basic modules for our new Map
@@ -463,326 +464,16 @@ Deliverable
  - Tangent Bug
  - Maze escape
  - Brushfire algorithm
-
-Results of testing
-~~~~~~~~~~~~~~~~~~
-Results of Sprint 6 were the creation of several example modules that could be used as
-teaching examples.
-
-Successes and Failures
-~~~~~~~~~~~~~~~~~~~~~~
-This sprint had us start back up on the backlog, get things properly set up and added together
-to continue to work on the modules that are the main section of the project. This was a good 
-start back on this project leading into the end of he semester and into winter break.
-
-Modifications required (product backlog, design, requirements, etc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-No modifications to future Sprints, Design, or Architecture were required this sprint.
-
-Sprint Review
-~~~~~~~~~~~~~
-This was a good sprint to end the semester on. Lots of the project base was completed, while leaving
-a good portion of the project open to be finished during the next semester.
-
-Sprint Retrospective
-~~~~~~~~~~~~~~~~~~~~
-A good final sprint. A large change from the original plan at the beginning of the semster. This left a 
-good portion of the project to be finished at the begining of the next semester, with any additional 
-portions of the project that we are looking at taking on.
-
-
-Sprint 7 Report
----------------
-December 22nd - January 25th
-
-A bit of a longer sprint. This was over the Chistmas break and used to keep our minds focused on the
-project. With it being such a long break, we made sure to keep contact over Discord so that we could 
-continue making progress.
-
-Most of this Sprint was spent finishing up testing problems for the functions that we had that already 
-existed, as well as looking at diffrent ways of distributing this program. Since this is an open source
-project, the first meeting back was used to decide on a couple of different licenses we could use.
-
-Sprint Backlog
-~~~~~~~~~~~~~~
- - PID control family
- - Low and high pass filters
- - Weighted Average
- - Recursive Filter
- - Kalman Filter (Scalar and Vector)
- - Extended Kalman Filter
- - Unscented Filter and Sigma point filter
- - Particle filters
- - Potential function
-
-Deliverable
-~~~~~~~~~~~
- - Research Open Source Projects
-	 - Licenses
-	 - Contributing Files
-	 - Templates
-
-Results of testing
-~~~~~~~~~~~~~~~~~~
-No outside testing for new modules were completed during this Sprint.
-
-Successes and Failures
-~~~~~~~~~~~~~~~~~~~~~~
-This Sprint brought about the creation of the licenses that we would use for our first
-distribution. As such, while no new modules were made, much more thought was present in 
-this sprint than in several others.
-
-Modifications required (product backlog, design, requirements, etc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-No modifications to future Sprints, Design, or Architecture were required this sprint.
-
-Sprint Review
-~~~~~~~~~~~~~
-This Sprint was a bit of a letdown compared to what we were hoping to have accomplished over the longer
-break that we had. Most of what we had completed was more side stuff than the main structure of our 
-project. This lead to a couple setback on the original timeline.
-
-Sprint Retrospective
-~~~~~~~~~~~~~~~~~~~~
-This was a Sprint that was needed at the time, and looking back, helped set up the rest of the semester
-for getting what we finished completed at the time.
-
-
-Sprint 8 Report
----------------
-January 26th - February 9th
-
-This sprint got us back on track for making the entire library that we were hoping to finish. It started
-with an initial release for the project, in beta, and the error correction that came from an actual release.
-
-We also received at this time an extra person to help with the build moving foward.
-
-Sprint Backlog
-~~~~~~~~~~~~~~
- - PID control family
- - Low and high pass filters
- - Weighted Average
- - Recursive Filter
- - Kalman Filter (Scalar and Vector)
- - Extended Kalman Filter
- - Unscented Filter and Sigma point filter
- - Particle filters
- - Potential function
-
-Deliverable
-~~~~~~~~~~~
- - First release
- - Documents 
-	 - Readme
-	 - License
-	 - Code of Conduct
-	 - Contributing
-
-Results of testing
-~~~~~~~~~~~~~~~~~~
-Testing on the first released showed promise, but installation and use with the project was problematic.
-The library did not wish to load in correctly and as such, library names do not work correctly at this time.
-
-Successes and Failures
-~~~~~~~~~~~~~~~~~~~~~~
-We completed a first release! This is a large part of excitement for the group. 
-
-Modifications required (product backlog, design, requirements, etc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The release actually required a large change in the structure of the project, as the library would not
-properly load when called. 
-
-Sprint Review
-~~~~~~~~~~~~~
-This sprint gave a huge moral boost to the group as we had something that others could download and look
-at if they were also interested in robotics, or if they were looking for supplementary material.
-
-Sprint Retrospective
-~~~~~~~~~~~~~~~~~~~~
-
-
-Sprint 9 Report
----------------
-February 10th - February 23rd
-
-This was the first sprint where we concentrated on teaching someone else what our project was about. Since
-we had gained a new person, we needed to bring them up to speed on what we had been working on and how it
-was all meant to work together. 
-
-This also gave us the option of splitting the group up into two subgroups that would allow us to better 
-test the Artificial Intelligence section that we were hoping to get to as a group.
-
-Sprint Backlog
-~~~~~~~~~~~~~~
- - PID control family
- - Low and high pass filters
- - Weighted Average
- - Recursive Filter
- - Kalman Filter (Scalar and Vector)
- - Extended Kalman Filter
- - Unscented Filter and Sigma point filter
- - Particle filters
- - Potential function
-
-Deliverable
-~~~~~~~~~~~
- - Project split into two parts
-	 - Library
-	 - Artificial Intelligence
- - Prepping for next release
-
-
-Results of testing
-~~~~~~~~~~~~~~~~~~
-No testing on modules was completed during this sprint.
-
-Successes and Failures
-~~~~~~~~~~~~~~~~~~~~~~
-We had a start on the Artificial Network for learning if they could replace Filtering and/or if 
-they could be a substitute for either of them.
-
-Modifications required (product backlog, design, requirements, etc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Since this project was split, it required a split split of the demands on each person.
-
-Sprint Review
-~~~~~~~~~~~~~
-This Sprint was different from what we had had before as it essentially took our one group 
-and split it into two different groups giving us each a different goal for the same project.
-
-Sprint Retrospective
-~~~~~~~~~~~~~~~~~~~~
-This may have been much later in the semster than we were hoping to get started on this part of the
-project, but since we had gained a new teammate, it was a good time for it as well.
-
-
-Sprint 10 Report
-----------------
-February 24th - March 16th
-
-This sprint was a much slower sprint due to the decrease in module completion. This did however
-start off with the discussion of how we should set the project up to be picked up after we had
-completed the given project.
-
-There was also significant work done on the Artificial Intelligence side of the project as well
-considering that there was a Paper that needed to be completed soon after the deadline for this
-Sprint, along with the required testing and prep needed in the creation of the Neural Net.
-
-Sprint Backlog
-~~~~~~~~~~~~~~
- - PID control family
- - Low and high pass filters
- - Weighted Average
- - Recursive Filter
- - Kalman Filter (Scalar and Vector)
- - Extended Kalman Filter
- - Unscented Filter and Sigma point filter
- - Particle filters
- - Potential function
-
-Deliverable
-~~~~~~~~~~~
- - Prepping for next release
-
-Results of testing
-~~~~~~~~~~~~~~~~~~
-No testing on new modules were completed at this time. The modules that were already available
-did however see several more test cases created.
-
-Successes and Failures
-~~~~~~~~~~~~~~~~~~~~~~
-The creation of a basic Neural Network to test against Filtering was a large success of this 
-Sprint. The paper that was underway and the different forms of testing were to be seen.
-
-Modifications required (product backlog, design, requirements, etc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-No modifications to future Sprints, Design, or Architecture were required this sprint.
-
-Sprint Review
-~~~~~~~~~~~~~
-This Sprint was a bit of a slowdown on the project as a whole. While work was being done on the 
-library, a large section of time was dedicated to bringin our new member up to speed, having them 
-test out the given modules, and the work on the Neural Network.
-
-Sprint Retrospective
-~~~~~~~~~~~~~~~~~~~~
-
-
-Sprint 11 Report
-----------------
-March 17th - March 30th
-
-This sprint brough us to the end of the paper, and to the endge of building the filters for the
-library. With the completion of he Sensor module, testing against different filters and the fusion
-of sensors would be available.
-
-Sprint Backlog
-~~~~~~~~~~~~~~
- - PID control family
- - Low and high pass filters
- - Weighted Average
- - Recursive Filter
- - Kalman Filter (Scalar and Vector)
- - Extended Kalman Filter
- - Unscented Filter and Sigma point filter
- - Particle filters
- - Potential function
-
-Deliverable
-~~~~~~~~~~~
- - Prepping for next release
  - Simulation of sensors (IMUs, encoders)
 
 Results of testing
 ~~~~~~~~~~~~~~~~~~
-No testing on new modules were completed at this time.
-
-Successes and Failures
-~~~~~~~~~~~~~~~~~~~~~~
-The simulation of Sensors that was created was far below standard for what woud be needed
-and needed more testing
-
-Modifications required (product backlog, design, requirements, etc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-No modifications to future Sprints, Design, or Architecture were required this sprint.
-
-Sprint Review
-~~~~~~~~~~~~~
-
-Sprint Retrospective
-~~~~~~~~~~~~~~~~~~~~
-
-
-Sprint 12 Report
-----------------
-March 31st - April 13th
-
-Sprint Backlog
-~~~~~~~~~~~~~~
- - PID control family
- - Low and high pass filters
- - Weighted Average
- - Recursive Filter
- - Kalman Filter (Scalar and Vector)
- - Extended Kalman Filter
- - Unscented Filter and Sigma point filter
- - Particle filters
- - Potential function
-
-Deliverable
-~~~~~~~~~~~
- - Simulation of sensors (IMUs, encoders)
-
-
-Results of testing
-~~~~~~~~~~~~~~~~~~
 
 Successes and Failures
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Modifications required (product backlog, design, requirements, etc)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-No modifications to future Sprints, Design, or Architecture were required this sprint.
 
 Sprint Review
 ~~~~~~~~~~~~~
@@ -795,44 +486,3 @@ Sprint Analytics
 
 Place your burndown charts, team velocity information, etc here if they
 are not discussed above.
-
-Sprint 13 Report
-----------------
-April 14th - April 16th
-
-Include your report here.  You may have sent the report to your client,
-it should be duplicated here.   There is not a separate report submission
-for the class.
-
-Sprint Backlog
-~~~~~~~~~~~~~~
- - PID control family
- - Low and high pass filters
- - Weighted Average
- - Recursive Filter
- - Unscented Filter and Sigma point filter
- - Particle filters
- - Potential function
-
-Deliverable
-~~~~~~~~~~~
- - Kalman Filter (Scalar and Vector)
- - Extended Kalman Filter
-
-Results of testing
-~~~~~~~~~~~~~~~~~~
-
-Successes and Failures
-~~~~~~~~~~~~~~~~~~~~~~
-
-Modifications required (product backlog, design, requirements, etc)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-No modifications to future Sprints, Design, or Architecture were required this sprint.
-
-Sprint Review
-~~~~~~~~~~~~~
-
-Sprint Retrospective
-~~~~~~~~~~~~~~~~~~~~
-
-

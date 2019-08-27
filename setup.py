@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(  name='robolib',
-        version='0.1.1',
+        version='0.1.0',
         description="This library is an educational resource" +
         "associated with the open-source RoboScience Organization" +
         "(found at http://www.roboscience.org/) to provide a useful" +

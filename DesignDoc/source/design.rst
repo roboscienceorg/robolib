@@ -17,9 +17,9 @@ Systems Goals
 -------------
 
 As discussed with the stakeholders, the Senior Design team will be delivering 
-library code in Python containing all of the algorithms from the Robotics book 
+library code in python containing all of the algorithms from the Robotics book 
 written by Dr. McGough, a professor at South Dakota School of Mines and 
-Technology. Thorough documentation and tutorials for every module and setup 
+Technology. Thourough documentation and tutorials for every module and setup 
 files will be provided so that users with very little to no experience spend no 
 time in setting up their environment and getting started with learning the 
 concepts.
@@ -70,24 +70,29 @@ code is easy to read and write. GitHub was used for version control.
 Architecture and System Design
 ------------------------------
 
-The structure of the library required the most architecture. Each module
-contains Python objects which represent a component of that topic.
+There are 7 classes right now and they are:
 
-For example, in the Motion Algorithms section, you have functions which 
-actually run the algorithm, and class objects which provide the infrastructure
-such as the environment which the robot operates in.
+- MECANUM - Class to help visualize a mecanum robot.
+- PTL - 
+- DDR - Differential Drive Robot
+- Map - Helps use the map object
+- PublisherExample - Helps use publisher along with subscriber to see 
+                     communication using ROS2
+- SubscriberExample - Helps use subscriber along with publisher to see 
+                      communication using ROS2
+- ValToPWM - Helps output a pulse width modulation graph based on a value. 
 
-Save for the algorithm section, each module is built as independent from the 
-other modules as possible. This allows the user the flexibility to write code
-to tie them together, but they can operate as they are. Since robotics lends
-itself to innovative tasks, the design team attempted to couple everything
-rather loosely to ensure an appropriate amount of flexibility in use.
+The publisher and subscriber classes are built to interact with each other. 
+The MECANUM, PTL, DDR are independent and the user can initialize their objects 
+in a python script and run them. The Map object can be used to visualize 
+motion planning algorithms like Bug 1 and Bug 2. Code for them has not been 
+written yet.
 
 Design Selection
 ~~~~~~~~~~~~~~~~
 
 We initially developed and displayed the robots movements using Veranda and ROS 
-2, but since both were actively being developed, they still had 
+2, but since both these things were actively being developed, they still had 
 bugs. Therefore, we decided to move away from it and made our own map object, 
 so that we did not have to depend on external libraries which may fail at 
 times. 
@@ -113,6 +118,20 @@ application, to decide on meeting times and discuss issues if they could not
 meet. A git runner was set up on discord so that the team got a notification 
 every time someone pushed something to the RoboScience repo. 
 
+Classes
+~~~~~~~
+
+Each library has its own class.
+
+The following classes are primarily used or dependent.
+- MECANUM
+- PTL
+- DDR
+- Map
+- PublisherExample
+- SubscriberExample
+- ValToPWM
+ 
 
 Major Component #1
 -------------------
@@ -126,8 +145,13 @@ algorithms which help visualize path planning algorithms.
 Technologies Used
 ~~~~~~~~~~~~~~~~~
 
-The libraries were developed on Ubuntu 16.04 operating system and Python 3. 
+The libraries were developed on Ubuntu 16.04 operating system using Robotics 
+Operating System 2 and Python 3. 
 
+Component Overview
+~~~~~~~~~~~~~~~~~~
+
+This section can take the form of a list of features.
 
 Architecture Diagram
 ~~~~~~~~~~~~~~~~~~~~~
@@ -135,6 +159,12 @@ Architecture Diagram
 Robots are inidividual classes, and they can be easily called and used by 
 including their classes in the file headers. Tutorials and examples are 
 provided to use each module.  
+
+
+Design Details
+~~~~~~~~~~~~~~
+
+<insert code>
 
 
 
@@ -159,10 +189,11 @@ https://github.com/roboscienceorg/robolib
 Component Overview
 ~~~~~~~~~~~~~~~~~~
 
-The documentation will include both API references generated from the Python 
-Sphinx library, as well as tutorials for each module. This should provide both
-beginners and experienced programmers with the tools necessary to get off the
-ground quickly.
+The user can just download the files on their desktop and just run them. 
+
+Design Details
+~~~~~~~~~~~~~~
+
 
 
 Major Component #3
@@ -189,3 +220,15 @@ Helps make a goal
 The user can either do this using matplotlib or hardcoding it at the beginning. 
 If the user decides to use the GUI, then he has to click finish to get done 
 with editing it.
+
+Phase Overview
+~~~~~~~~~~~~~~
+
+This is an extension of the Phase Overview above, but specific to this
+component. It is meant to be basically a brief list with space for
+marking the phase status.
+
+Design Details
+~~~~~~~~~~~~~~
+
+
